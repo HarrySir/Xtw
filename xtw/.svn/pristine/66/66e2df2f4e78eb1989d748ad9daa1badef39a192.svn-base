@@ -1,0 +1,17 @@
+/**
+ * 
+ */
+package edu.fjnu.xtw.service.inter;
+
+/**
+ * @author Administrator
+ *
+ */
+public interface KeyWordServiceInter {
+	/**
+	 * 参数为提取关键词后的字符串，先把转换成数组，封装到对象中再插入
+	 * @param keyWordStr
+	 * @return
+	 */
+	public int addKeyWord(String keyWordStr);
+}

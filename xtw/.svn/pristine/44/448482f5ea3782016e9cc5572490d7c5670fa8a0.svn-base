@@ -1,0 +1,27 @@
+/**
+ * 
+ */
+package edu.fjnu.xtw.test;
+
+import org.junit.Test;
+
+import edu.fjnu.xtw.dao.impl.CollegeDaoImpl;
+import edu.fjnu.xtw.dao.inter.CollegeDaoInter;
+import edu.fjnu.xtw.domain.XtwCollege;
+
+/**
+ * @author lzx
+ * 测试CollegeDaoImpl类的实现
+ */
+public class CollegeDaoImplTest {
+	/**
+	 * 测试通过学院名称，学校Id查找学院
+	 * past
+	 */
+	@Test
+	public void testFindByCollegeNameAndSchoolId(){
+		CollegeDaoInter collegeDaoImpl = new CollegeDaoImpl();
+		XtwCollege college = collegeDaoImpl.findByCollegeNameAndSchoolId("软件学院", 1);
+		System.out.println(college);
+	}
+}

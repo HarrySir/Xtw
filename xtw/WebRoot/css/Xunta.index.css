@@ -1,0 +1,519 @@
+
+body{
+
+	padding-top: 50px;
+}
+#header{
+	height:1px;
+	position:relative;
+}
+.navbar-fixed-top{
+
+	border-radius: 0px;
+}
+#index-wrap {
+
+	background:transparent url(https://dn-wtbox.qbox.me/img/tour/tour_bg.jpg?v=3.2.0) no-repeat scroll center top;
+    min-width: 1349px;
+}
+#index-wrap .index-banner .index-banner-wrap{
+
+	width: 980px;
+	height: 423px;
+	margin:  0 auto;
+	position: relative;
+}
+#index-wrap .index-banner .index-banner-wrap .index-banner-inner{
+
+	padding: 120px 60px 60px 10px;
+}
+#index-wrap .index-banner .index-banner-wrap .index-banner-inner .index-banner-action {
+    position: absolute;
+    bottom: 80px;
+    left: 10px;
+}
+#index-wrap .index-banner .index-banner-wrap .index-banner-inner .index-banner-action .btn-success {
+    padding: 15px 60px;
+    font-size: 23px;
+}
+
+.index-banner-wrap #login{
+	
+    
+    height: 200px;
+    position: absolute;
+    width: 260px;
+    top:0;
+    right:30px;
+    
+}
+#index-wrap .index-banner .index-banner-wrap h1{
+
+	color: #FFF;
+	margin-bottom: 30px;
+	padding-left:0px; 
+}
+#index-wrap .index-banner .index-banner-wrap p{
+
+	color: #FBFBFB;
+	width: 410px;
+	font-size: 24px;
+	line-height: 150%;
+	margin-top: 20px;
+	padding-left:0px; 
+}
+
+.col-md-4 #login{
+
+	margin-bottom: 40px;
+	
+    
+}
+
+#index-wrap .index-body{
+
+	background: #FBFBFB none repeat scroll 0% 0%;
+}
+#index-wrap .index-body ul.index-feature{
+
+	width: 1010px;
+	margin: 0 auto;
+}
+#index-wrap .index-body ul.index-feature li{
+
+	float: left;
+	width: 33.3%;
+	text-align: center;
+	line-height: 200%;
+	padding: 45px 0px;
+	font-size: 14px;
+	color: #999;
+}
+#index-wrap .index-body ul.index-feature::before, #index-wrap .index-body ul.index-feature::after {
+    content: " ";
+    display: table;
+}
+li{
+	list-style: none;
+}
+#index-wrap .index-body ul.index-feature li h4{
+
+	color: #333;
+	font-size: 20px;
+	font-weight: normal;
+	margin-top: 20px;
+}
+
+.mr_15{
+
+	margin-right:  15px;
+}
+
+
+header#header nav.navbar .navbar-right:last-child{
+
+	margin-right: 0px;
+}
+
+
+
+
+header#header ul.nav > li.divider-vertical {
+    border-style: solid;
+    border-width: 1px;
+    opacity: 0.5;
+    height: 58px;
+    border-left: 1px solid #111415;
+    border-right: 1px solid #646668;
+}
+header#header ul.nav > li > a {
+    height: 58px;
+    line-height: 58px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+#index-wrap .index-body ul.index-feature li img {
+    border-radius: 10px;
+    width: 100px;
+    height: 100px;
+}
+
+.single-pannel{
+
+	background: #F9F9F7 none repeat scroll 0% 0%;
+	overflow: hidden;
+}
+.login-wrap .single-panel .single-panel-inner.login-mini{
+	width: 480px;
+}
+.login-wrap .single-panel .single-panel-inner{
+
+	margin-top: 110px;
+}
+.single-panel .single-panel-inner {
+    width: 960px;
+    margin: 30px auto 50px;
+    border: 1px solid #E1E1E1;
+    box-shadow: 0px 0px 3px #EEE, 0px 0px 3px #FFF inset;
+    background: #FBFBFB none repeat scroll 0% 0%;
+    padding: 20px;
+}
+
+.single-panel .single-panel-inner .single-panel-header h3 {
+
+	line-height: 40px;
+    color: #5C6371;
+    font-size: 24px;
+    margin: 0px; 
+}
+
+.single-panel .single-panel-inner .single-panel-header {
+    border-bottom: 3px solid #E1E1E1;
+    padding-bottom: 10px;
+    position: relative;
+}
+
+.login-wrap .single-panel .single-panel-inner.login-mini .single-panel-body {
+    padding: 20px 40px 0px;
+}
+
+.single-panel .single-panel-inner .single-panel-body {
+    border-top: 1px solid #E1E1E1;
+    margin-top: 5px;
+
+}
+.single-panel .single-panel-inner .single-panel-body .single-panel-section {
+    margin-top: 10px;
+}
+.login-wrap .single-panel .single-panel-inner.login-mini .single-panel-body form {
+    margin: 0px 5% !important;
+}
+.form-horizontal .form-group {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.form-group {
+    margin-bottom: 5px;
+}
+.input-group {
+    position: relative;
+    display: table;
+    border-collapse: separate;
+}
+.input-group-addon {
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1;
+    color: #555;
+    text-align: center;
+    background-color: #EEE;
+    border: 1px solid #CCC;
+    border-radius: 3px;
+}
+.input-group-addon:first-child {
+    border-right: 0px none;
+}
+.input-group .form-control:last-child{
+
+	border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+}
+.input-group .form-control {
+    position: relative;
+    z-index: 2;
+    float: left;
+    width: 100%;
+    margin-bottom: 0px;
+}
+.login-wrap .single-panel .single-panel-inner.login-mini .single-panel-footer {
+    border: 0px none;
+    padding: 0px 20px;
+}
+.single-panel .single-panel-inner .single-panel-footer {
+    min-height: 40px;
+    background: #FBFBFB none repeat scroll 0% 0%;
+    line-height: 54px;
+}
+
+/* 注册 */
+.single-panel .single-panel-inner.middle {
+    width: 500px;
+}
+
+label {
+    display: inline-block;
+    max-width: 100%;
+    font-weight: normal;
+}
+
+input {
+
+	font: inherit;
+    margin: 0px;
+}
+}
+.form-horizontal .control-label {
+    text-align: right;
+    margin-bottom: 0px;
+    padding-top: 7px;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: 32px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857;
+    color: #555;
+    background-color: #FFF;
+    background-image: none;
+    border: 1px solid #CCC;
+    border-radius: 3px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+}
+.col-sm-10 {
+    width: 83.3333%;
+    float: left;
+}
+.col-xs-8 .col-sm-10 {
+
+	position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.col-sm-4 {
+    width: 33%;
+    float: left;
+    position: absolute;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+#btn-login{
+	
+	margin-top:10px;
+}
+
+.form-select {
+	text-align:center;
+	font-size:14px;
+	display:-moz-box;
+    display:-webkit-box;
+    display:box;
+}
+
+.form-select .form-control .form-select-1{
+	font-size:14px;
+	color:#555;
+	-moz-box-flex:1;
+    -webkit-box-flex:1;
+    box-flex:1;
+}
+.form-select .form-control .form-select-2{
+	font-size:14px;
+	color:#555;	
+	-moz-box-flex:1;
+    -webkit-box-flex:1;
+    box-flex:1;
+}
+
+
+
+
+.page_navbar {
+    height: 59px;
+    width: 100%;
+    padding-top:5px;
+    border-bottom: 1px solid #E1E1E1;
+    box-shadow: 0px 0px 3px #EEE, 0px 0px 3px #FFF inset;
+    background: #F9F9F7 none repeat scroll 0% 0%;
+}
+
+.page_navbar div.page-navbar-warp {
+    max-width: 950px !important;
+    margin: 0px auto;
+    height: 59px;
+    position: relative;
+}
+
+.page_navbar div.page-navbar-warp .title {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 180px;
+    white-space: nowrap;
+    line-height: 59px;
+}
+
+.page_navbar div.page-navbar-warp .title h3 {
+    display: inline;
+    min-width: 100px;
+    margin: 0px;
+    line-height: 59px;
+    font-size: 20px;
+    color: #5C6371;
+}
+
+.page_navbar div.page-navbar-warp .title h3 a {
+    color: #5C6371;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-left: -10px;
+    text-decoration:none;
+}
+
+.page_navbar div.page-navbar-warp .title h3 a:link{
+	color: #666;
+    outline: 0px none;
+    
+}
+.page_navbar div.page-navbar-warp .main {
+    padding-top: 10px;
+    margin-left: 180px;
+    width: 770px;
+    height: 61px;
+    
+}
+.page_navbar div.page-navbar-warp .main .toolbar_panel{
+	width:82px;
+	height:34px;
+	
+}
+.forum-panel {
+    background: #F9F9F7 none repeat scroll 0% 0%;
+    height: 1000px;
+}
+
+.forum-panel .forum-container {
+    max-width: 980px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 25px;
+    margin-bottom: 30px;
+}
+
+.mb_10 {
+    margin-bottom: 10px;
+}
+
+.forum-panel .forum-container .forum-content {
+    background: #FBFBFB none repeat scroll 0% 0%;
+    box-shadow: 0px 0px 3px #EEE, 0px 0px 3px #FFF inset;
+    border: 1px solid #E1E1E1;
+    min-height: 178px;
+    width:705px;
+    height:800px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.forum-panel .forum-container .forum-content .forum-category-wrapper .forum-heading {
+    color: #646B75;
+    font-size: 24px;
+    border-bottom: 1px solid #E1E1E1;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.forum-panel .forum-container .forum-content .forum-category-wrapper .forum-heading h3 {
+    color: #646B75;
+    font-size: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.forum-panel .forum-container .forum-content .forum-category-wrapper .thread-list .thread-item {
+    padding-bottom: 20px;
+    position: relative;
+}
+.forum-panel .forum-container .forum-content .forum-category-wrapper .thread-list #myTab{
+	margin-bottom:20px;
+}
+
+.forum-panel .forum-container .forum-content .forum-category-wrapper .category-pager {
+    text-align: right;
+}
+
+.pagination {
+    display: inline-block;
+    padding-left: 0px;
+    margin: 20px 0px;
+    border-radius: 3px;
+}
+
+.forum-panel .forum-container .sidebar .sidebar-widget {
+    background: #FBFBFB none repeat scroll 0% 0%;
+    border: 1px solid #E1E1E1;
+    margin-bottom: 15px;
+    box-shadow: 0px 0px 3px #EEE, 0px 0px 3px #FFF inset;
+    padding: 15px;
+}
+
+.forum-panel .forum-container .sidebar .sidebar-widget h4 {
+    border-bottom: 1px solid #E1E1E1;
+    padding-bottom: 10px;
+    font-size: 16px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    text-shadow: 0px 2px 0px #FFF, 0px -2px 0px #F2F2EA;
+}
+
+.forum-panel .forum-container .sidebar .sidebar-widget ul {
+    margin: 0px;
+}
+
+.forum-panel .forum-container .sidebar .sidebar-widget ul li {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+}
+
+.forum-panel .forum-container .sidebar .sidebar-widget ul li a {
+    color: #666;
+    outline: 0px none;
+    text-decoration:none;
+}
+
+.forum-panel .forum-container .sidebar .sidebar-widget ul li a:hover{
+	
+	color: #D14836;
+    text-decoration: none;
+}
+
+
+.forum-panel .forum-text textarea{
+	
+	margin-top:15px;
+	margin-bottom:15px;
+	resize:none;
+}
+
+input.ns-error{
+	
+	margin-top:15px;
+	
+}
+
+table.table-search{
+	
+	margin-top:15px;
+}
+
+.file-box{
+	position:relative;
+	width:261px;
+	display:inline-block;
+}
+.file-box .brow-file{
+	position:absolute;
+	height: 34px;
+	top:0;
+	right:0; 
+	filter:alpha(opacity:0);opacity: 0;
+	
+}
+

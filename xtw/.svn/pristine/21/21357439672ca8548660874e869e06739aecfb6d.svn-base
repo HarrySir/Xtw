@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package edu.fjnu.xtw.service.inter;
+
+/**
+ * @author Administrator
+ *
+ */
+public interface KeyWordServiceInter {
+	
+}

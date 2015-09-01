@@ -1,0 +1,14 @@
+/**
+ * 
+ */
+package edu.fjnu.xtw.dao.inter;
+
+import edu.fjnu.xtw.domain.XtwKeyWord;
+
+/**
+ * @author Administrator
+ *
+ */
+public interface KeyWordDaoInter {
+	public void addKeyWord(XtwKeyWord keyWord);
+}

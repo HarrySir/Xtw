@@ -1,0 +1,38 @@
+/**
+ * 
+ */
+package edu.fjnu.xtw.service.impl;
+
+import java.util.List;
+
+import net.sf.json.JSONArray;
+
+import edu.fjnu.xtw.dao.impl.SchoolDaoImpl;
+import edu.fjnu.xtw.dao.inter.SchoolDaoInter;
+import edu.fjnu.xtw.domain.XtwSchool;
+import edu.fjnu.xtw.service.inter.SchoolServiceInter;
+
+/**
+ * @author Administrator
+ *
+ */
+public class SchoolServiceImpl implements SchoolServiceInter {
+	private SchoolDaoInter schoolDaoImpl = new SchoolDaoImpl();
+	
+	@Override
+	public XtwSchool findBySchoolName(String schoolName) {
+		return schoolDaoImpl.findBySchoolName(schoolName);
+	}
+
+	@Override
+	public String getAllSchool() {
+		//得到所有的school对象，保存在list中
+		List<XtwSchool> schoolList = schoolDaoImpl.loadAll();
+		//把list变成json对象
+		JSONArray jsonArray = JSONArray.fromObject(schoolList);
+		//把json对象转换成字符串
+		String jsonString = jsonArray.toString();
+		return jsonString;
+	}
+
+}

@@ -1,0 +1,137 @@
+/**
+ * 
+ */
+package edu.fjnu.xtw.dao.impl;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import edu.fjnu.xtw.dao.inter.SchoolDaoInter;
+import edu.fjnu.xtw.domain.XtwSchool;
+import edu.fjnu.xtw.utils.JdbcUtils;
+
+/**
+ * @author lzx
+ *
+ */
+public class SchoolDaoImpl implements SchoolDaoInter {
+	private static final String FIND_BY_SCHOOL_NAME = "select * from XTW_SCHOOL where schoolName=?";
+	private static final String FIND_BY_SCHOOL_ID = "select * from XTW_SCHOOL where schoolId=?";
+	private static final String LOAD_ALL = "select * from XTW_SCHOOL";
+	private static final String ADD_SCHOOL = "insert into XTW_SCHOOL values(seq_on_school.nextval,?)";
+	
+	@Override
+	public XtwSchool findBySchoolName(String schoolName) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		XtwSchool school = null;
+		try {
+			conn = JdbcUtils.getInstance().getConnection();
+			pstmt = conn.prepareStatement(FIND_BY_SCHOOL_NAME);
+			pstmt.setString(1, schoolName);
+			rset = pstmt.executeQuery();
+			if (rset == null) {
+				return null;
+			}
+			if (rset.next()) {
+				school = new XtwSchool();
+				school.setSchoolId(rset.getInt("schoolId"));
+				school.setSchoolName(rset.getString("schoolName"));
+			}
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		finally{
+			JdbcUtils.getInstance().releaseRes(conn, pstmt, rset);
+		}
+		return school;
+	}
+
+	
+	@Override
+	public XtwSchool findById(Integer schoolId) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		XtwSchool school = null;
+		try {
+			conn = JdbcUtils.getInstance().getConnection();
+			pstmt = conn.prepareStatement(FIND_BY_SCHOOL_ID);
+			pstmt.setInt(1, schoolId);
+			rset = pstmt.executeQuery();
+			if (rset == null) {
+				return null;
+			}
+			if (rset.next()) {
+				school = new XtwSchool();
+				school.setSchoolId(rset.getInt("schoolId"));
+				school.setSchoolName(rset.getString("schoolName"));
+			}
+		} 
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		finally{
+			JdbcUtils.getInstance().releaseRes(conn, pstmt, rset);
+		}
+		return school;
+	}
+
+
+	@Override
+	public List<XtwSchool> loadAll() {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		XtwSchool school = null;
+		List<XtwSchool> schoolList = new ArrayList<XtwSchool>();
+		try {
+			conn = JdbcUtils.getInstance().getConnection();
+			pstmt = conn.prepareStatement(LOAD_ALL);
+			rset = pstmt.executeQuery();
+			if (rset == null) {
+				return null;
+			}
+			while (rset.next()) {
+				school = new XtwSchool();
+				school.setSchoolId(rset.getInt("schoolId"));
+				school.setSchoolName(rset.getString("schoolName"));
+				schoolList.add(school);
+			}
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		finally{
+			JdbcUtils.getInstance().releaseRes(conn, pstmt, rset);
+		}
+		return schoolList;
+	}
+
+
+	@Override
+	public void add(XtwSchool school) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		try {
+			conn = JdbcUtils.getInstance().getConnection();
+			pstmt = conn.prepareStatement(ADD_SCHOOL);
+			pstmt.setString(1, school.getSchoolName());
+			pstmt.executeUpdate();
+		} 
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		finally{
+			JdbcUtils.getInstance().releaseRes(conn, pstmt, null);
+		}
+		
+	}
+
+}
