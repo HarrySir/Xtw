@@ -135,7 +135,7 @@ public class PutLostServlet extends HttpServlet {
 		 */
 		
 		/*
-		 * 处理对应时间名称
+		 * 处理对应事件名称
 		 */
 		xtwDetail.setEventName("失物");
 	

@@ -544,14 +544,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		    
 		    
 		    $('.date').datetimepicker({  
-		        format: 'MM/dd/yyyy hh:mm',  
-		        language: 'zh-CN',  
+		        format: 'yyyy-mm-dd',  
+		        language: 'en',  
 		        pickDate: true,  
-		        pickTime: true,  
+		        pickTime: false,  
 		        hourStep: 1,  
 		        minuteStep: 15,  
 		        secondStep: 30,  
-		        inputMask: true  
+		        inputMask: true		        
 		      }); 
     
     </script>
