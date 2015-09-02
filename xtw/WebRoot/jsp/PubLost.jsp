@@ -117,7 +117,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </div>
         <div class="forum-panel">
           <div class="forum-container">
-            <div class="col-xs-12 col-sm-9">
+            <div class="col-xs-12 col-sm-9 funcmain">
               
               <div class="forum-content">
                 <div class="forum-category-wrapper">
