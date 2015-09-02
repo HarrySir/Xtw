@@ -110,7 +110,7 @@ public class RunStopWord {
 			//destFileBw.newLine();
 			if(i == resultArray.length -1)
 				System.out.println(finalStr.toString());
-		}
+			}
 		// 关闭输入流
 		StopWordFileBr.close();
 		
