@@ -80,9 +80,9 @@ public class RunStopWord {
 		}
 		// String argu = "." ;
 		//添加用户词典
-		CLibrary.Instance.NLPIR_AddUserWord("立诚");
-		CLibrary.Instance.NLPIR_AddUserWord("笃行");
-		//CLibrary.Instance.NLPIR_AddUserWord("不小心");
+//		CLibrary.Instance.NLPIR_AddUserWord("立诚");
+//		CLibrary.Instance.NLPIR_AddUserWord("笃行");
+//		CLibrary.Instance.NLPIR_AddUserWord("不小心");
 		instance.NLPIR_ImportUserDict(System.getProperty("user.dir")+"\\source\\userdic.txt");
 		String paragraph = TString;
 		
@@ -97,9 +97,9 @@ public class RunStopWord {
 				if (stopWordSet.contains(resultArray[i])) {
 					resultArray[i] = null;
 				}
+				// 把过滤后的字符串数组存入到一个字符串中
+				StringBuffer finalStr = new StringBuffer();
 			
-			// 把过滤后的字符串数组存入到一个字符串中
-			StringBuffer finalStr = new StringBuffer();
 			for (int i1 = 0; i1 < resultArray.length; i1++) {
 				if (resultArray[i1] != null) {
 					finalStr = finalStr.append(resultArray[i1]).append(" ");

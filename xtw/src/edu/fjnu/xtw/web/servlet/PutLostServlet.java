@@ -127,21 +127,19 @@ public class PutLostServlet extends HttpServlet {
 		//得到详细描述
 		String detailDescription = fileItemDetail.getString("UTF-8");
 		xtwDetail.setDetailDescription(detailDescription);
-		/*以上past*/
-		
 		/*
 		 * 处理用户ID
 		 */ 
 		XtwUsers user = (XtwUsers) request.getSession().getAttribute("session_user");
 		xtwDetail.setXtwUsers(user);
-		System.out.println(xtwDetail.getXtwUsers());
-		
+		/*以上past*/
 		
 		/*
 		 * 处理关键词ID
 		 */
-		/*XtwKeyWord xtwKeyWord = this.dealWithKeyWord(xtwDetail.getDetailDescription());
-		xtwDetail.setXtwKeyWord(xtwKeyWord);*/
+		XtwKeyWord xtwKeyWord = this.dealWithKeyWord(xtwDetail.getDetailDescription());
+		xtwDetail.setXtwKeyWord(xtwKeyWord);
+		System.out.println(xtwDetail.getXtwKeyWord());
 		
 		
 		/*

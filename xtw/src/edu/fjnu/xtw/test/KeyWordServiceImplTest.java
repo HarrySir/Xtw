@@ -20,8 +20,8 @@ public class KeyWordServiceImplTest {
 	@Test
 	
 	public void testGetKeyWordString (){
-		String Test = "具体位置是在西门，大概下午两点多丢的餐卡";
+		String test = "具体位置是在西门，大概下午两点多丢的餐卡";
 		KeyWordServiceInter keyWordServiceImpl = new KeyWordServiceImpl();
-		System.out.println(keyWordServiceImpl.getKeyWordString(Test));
+		System.out.println(keyWordServiceImpl.getKeyWordString(test));
 	}
 }

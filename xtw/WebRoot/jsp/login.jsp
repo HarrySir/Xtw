@@ -118,7 +118,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                          <i class="icon-user"></i>
 
                       </span>
-                      <input class="form-control ng-pristine ng-invalid-required" type="text" name="login_name" placeholder="请输入用户名/邮箱"></input>
+                      <input class="form-control ng-pristine ng-invalid-required" type="text" name="login_name" placeholder="请输入用户名"></input>
 
                    </div>
 
@@ -136,7 +136,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
                 </div>
                 <div class="form-group">
-                  <button class="btn btn-success btn-lg btn-block" type="button">登录</button>
+                  <button class="btn btn-success btn-lg btn-block" type="submit">登录</button>
 
                 </div>
               </form>
