@@ -20,6 +20,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <link rel="stylesheet" type="text/css" href="../css/Xunta.index.css">
     
     <link rel="stylesheet" type="text/css" href="../css/bootstrap-datetimepicker.min.css">
+     
     
     <meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -123,373 +124,432 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <h3>发布失物信息</h3>
                   </div>
                   <div class="thread-list">
-                    <ul id="myTab" class="nav nav-tabs ">
-					   <li class="active">
-					      <a href="#loserPub-cards" data-toggle="tab">卡类</a>
-					   <li><a href="#loserPub-elec" data-toggle="tab">电子产品类</a></li>
-					   <li><a href="#loserPub-day" data-toggle="tab">日常用品类</a></li>
-					   <li><a href="#loserPub-pack" data-toggle="tab">包类</a></li>
-					   <li><a href="#loserPub-orna" data-toggle="tab">配饰类</a></li>
-					   <li><a href="#loserPub-other" data-toggle="tab">其它</a></li>
-					   
-					</ul>
-					<div id="myTabContent" class="tab-content">
+                                  <ul id="myTab" class="nav nav-tabs ">
+											   <li class="active">
+											      <a href="#loserPub-cards" data-toggle="tab">卡类</a></li>
+											   <li><a href="#loserPub-elec" data-toggle="tab">电子产品类</a></li>
+											   <li><a href="#loserPub-day" data-toggle="tab">日常用品类</a></li>
+											   <li><a href="#loserPub-pack" data-toggle="tab">包类</a></li>
+											   <li><a href="#loserPub-orna" data-toggle="tab">配饰类</a></li>
+											   <li><a href="#loserPub-other" data-toggle="tab">其它</a></li>
+											   
+							     </ul>
+					   <div id="myTabContent" class="tab-content">
 					
-					   <div class="tab-pane fade in active" id="loserPub-cards">
-					            <div class="form-group" >
-								      <select class="form-control" id="loserpubCards">
-								         <option value="-1">请选择卡类别</option>
-								         <option value="0">银行卡</option>
-								         <option value="1">餐卡</option>
-								         <option value="2">身份证</option>
-								         <option value="3">会员卡</option>
-								      </select>
-								</div>
-								
-								 
-								<form class=" form-trans" id="loserPub-cards1" role="form" style="display:none;margin-top: 15px;">
-								      <input type="hidden" value="银行卡" name="bankCard">
-								      <div class="form-group">
-									    <label for="loserPub-bank-card">银行卡:</label>
-									    <input type="text" class="form-control" id="loserPub-bank-card" placeholder="请输入卡号">
-									  </div>
-									  <div class="form-group">
-									    <label for="loserPub-bank-cardName">持卡人姓名:</label>
-									    <input type="text" class="form-control" id="loserPub-bank-cardName" placeholder="">
-									  </div>
-									  <div class="form-group forum-text">
-								    
-									    <textarea class="form-control" placeholder="输入详细描述信息" rows="6"></textarea>
-									  </div>
-									  <button type="button"  class="btn btn-default add">上传图片</button>
-								          <div class="file-box" style="display:inline-block">
- 
-										 <input type='text' name='textfield' id='textfield-findcards1' class='txt' style="width: 160px;height:34px;"/>  
-										 <input type='button' class='btn ' value='浏览...' />
-										 <input type="file" name="fileField" class="brow-file" id="fileField-findcards1" size="28" onchange="document.getElementById('textfield-findcards1').value=this.value" />
-										 
-										
-									  </div>
-							          <button type="submit"  class="btn btn-success pull-right">提交</button>
-								      
-								</form>
-								
-								<form class=" form-trans" id="loserPub-cards2" role="form" style="display:none;margin-top: 15px;">
-								      <div class="form-group">
-									    <label for="loserPub-meal-card">餐卡:</label>
-									    <input type="text" class="form-control" id="loserPub-meal-card" placeholder="学院">
-									  </div>
-									  <div class="form-group">
-									    <label for="loserPub-meal-cardName">姓名:</label>
-									    <input type="text" class="form-control" id="loserPub-meal-cardName" placeholder="">
-									  </div>
-									  <div class="form-group forum-text">
-								    
-								    <textarea class="form-control" placeholder="输入详细描述信息" rows="6"></textarea>
-								  </div>
-								  <button type="button"  class="btn btn-default add">上传图片</button>
-							          <div class="file-box" style="display:inline-block">
- 
-										 <input type='text' name='textfield' id='textfield-findcards2' class='txt' style="width: 160px;height:34px;"/>  
-										 <input type='button' class='btn ' value='浏览...' />
-										 <input type="file" name="fileField" class="brow-file" id="fileField-findcards2" size="28" onchange="document.getElementById('textfield-findcards2').value=this.value" />
-										 
-										
-									  </div>
-							          <button type="submit"  class="btn btn-success pull-right">提交</button>
-								      
-								</form>
-								<form class=" form-trans" id="loserPub-cards3" role="form" style="display:none;margin-top: 15px;">
-								      <div class="form-group">
-									    <label for="loserPub-ide-card">身份证:</label>
-									    <input type="text" class="form-control" id="loserPub-ide-card" placeholder="身份证号码">
-									  </div>
-									  <div class="form-group">
-									    <label for="loserPub-ide-cardName">姓名:</label>
-									    <input type="text" class="form-control" id="loserPub-ide-cardName" placeholder="">
-									  </div>
-									  <div class="form-group forum-text">
-								    
-								    <textarea class="form-control" placeholder="输入详细描述信息" rows="6"></textarea>
-								  </div>
-								  <button type="button"  class="btn btn-default add">上传图片</button>
-							          <div class="file-box" style="display:inline-block">
- 
-										 <input type='text' name='textfield' id='textfield-findcards3' class='txt' style="width: 160px;height:34px;"/>  
-										 <input type='button' class='btn ' value='浏览...' />
-										 <input type="file" name="fileField" class="brow-file" id="fileField-findcards3" size="28" onchange="document.getElementById('textfield-findcards3').value=this.value" />
-										 
-										
-									  </div>
-							          <button type="submit"  class="btn btn-success pull-right">提交</button>
-								      
-								</form>
-								<form class=" form-trans" id="loserPub-cards4" role="form" style="display:none;margin-top: 15px;">
-								      
-									  <div class="form-group">
-									    <label for="loserPub-vip-cardName">会员卡:</label>
-									    <input type="text" class="form-control" id="loserPub-vip-cardName" placeholder="姓名">
-									  </div>
-									  <div class="form-group forum-text">
-								    
-								    <textarea class="form-control" placeholder="输入详细描述信息" rows="6"></textarea>
-								  </div>
-								  <button type="button"  class="btn btn-default add">上传图片</button>
-							          <div class="file-box" style="display:inline-block">
- 
-										 <input type='text' name='textfield' id='textfield-findcards4' class='txt' style="width: 160px;height:34px;"/>  
-										 <input type='button' class='btn ' value='浏览...' />
-										 <input type="file" name="fileField" class="brow-file" id="fileField-findcards4" size="28" onchange="document.getElementById('textfield-findcards4').value=this.value" />
-										 
-										
-									  </div>
-							          <button type="submit"  class="btn btn-success pull-right">提交</button>
-								      
-								</form>
-								
-					   </div>
+					           <div class="tab-pane fade in active" id="loserPub-cards">
+										            <div class="form-group" >
+													      <select class="form-control" id="loserpubCards">
+													         <option value="-1">请选择卡类别</option>
+													         <option value="0">银行卡</option>
+													         <option value="1">餐卡</option>
+													         <option value="2">身份证</option>
+													         <option value="3">会员卡</option>
+													      </select>
+													</div>
+													
+													 
+													<form class=" form-trans" id="loserPub-cards1" role="form" style="display:none;margin-top: 15px;">
+													      <input type="hidden" value="银行卡" name="bankCard">
+													      <div class="form-group">
+														    <label for="loserPub-bank-card">银行卡:</label>
+														    <input type="text" class="form-control" id="loserPub-bank-card" placeholder="请输入卡号">
+														  </div>
+														  <div class="form-group">
+														    <label for="loserPub-bank-cardName">持卡人姓名:</label>
+														    <input type="text" class="form-control" id="loserPub-bank-cardName" placeholder="">
+														  </div>
+														  <div class="form-group forum-text">
+													    
+														    <textarea class="form-control" placeholder="输入详细描述信息" rows="6"></textarea>
+														  </div>
+														  <button type="button"  class="btn btn-default add">上传图片</button>
+													          <div class="file-box" style="display:inline-block">
+					 
+															 <input type='text' name='textfield' id='textfield-findcards1' class='txt' style="width: 160px;height:34px;"/>  
+															 <input type='button' class='btn ' value='浏览...' />
+															 <input type="file" name="fileField" class="brow-file" id="fileField-findcards1" size="28" onchange="document.getElementById('textfield-findcards1').value=this.value" />
+															 
+															
+														  </div>
+												          <button type="submit"  class="btn btn-success pull-right">提交</button>
+													      
+													</form>
+													
+													<form class=" form-trans" id="loserPub-cards2" role="form" style="display:none;margin-top: 15px;">
+													      <div class="form-group">
+														    <label for="loserPub-meal-card">餐卡:</label>
+														    <input type="text" class="form-control" id="loserPub-meal-card" placeholder="学院">
+														  </div>
+														  <div class="form-group">
+														    <label for="loserPub-meal-cardName">姓名:</label>
+														    <input type="text" class="form-control" id="loserPub-meal-cardName" placeholder="">
+														  </div>
+														  <div class="form-group forum-text">
+													    
+													    <textarea class="form-control" placeholder="输入详细描述信息" rows="6"></textarea>
+													  </div>
+													  <button type="button"  class="btn btn-default add">上传图片</button>
+												          <div class="file-box" style="display:inline-block">
+					 
+															 <input type='text' name='textfield' id='textfield-findcards2' class='txt' style="width: 160px;height:34px;"/>  
+															 <input type='button' class='btn ' value='浏览...' />
+															 <input type="file" name="fileField" class="brow-file" id="fileField-findcards2" size="28" onchange="document.getElementById('textfield-findcards2').value=this.value" />
+															 
+															
+														  </div>
+												          <button type="submit"  class="btn btn-success pull-right">提交</button>
+													      
+													</form>
+													<form class=" form-trans" id="loserPub-cards3" role="form" style="display:none;margin-top: 15px;">
+													      <div class="form-group">
+														    <label for="loserPub-ide-card">身份证:</label>
+														    <input type="text" class="form-control" id="loserPub-ide-card" placeholder="身份证号码">
+														  </div>
+														  <div class="form-group">
+														    <label for="loserPub-ide-cardName">姓名:</label>
+														    <input type="text" class="form-control" id="loserPub-ide-cardName" placeholder="">
+														  </div>
+														  <div class="form-group forum-text">
+													    
+													    <textarea class="form-control" placeholder="输入详细描述信息" rows="6"></textarea>
+													  </div>
+													  <button type="button"  class="btn btn-default add">上传图片</button>
+												          <div class="file-box" style="display:inline-block">
+					 
+															 <input type='text' name='textfield' id='textfield-findcards3' class='txt' style="width: 160px;height:34px;"/>  
+															 <input type='button' class='btn ' value='浏览...' />
+															 <input type="file" name="fileField" class="brow-file" id="fileField-findcards3" size="28" onchange="document.getElementById('textfield-findcards3').value=this.value" />
+															 
+															
+														  </div>
+												          <button type="submit"  class="btn btn-success pull-right">提交</button>
+													      
+													</form>
+													<form class=" form-trans" id="loserPub-cards4" role="form" style="display:none;margin-top: 15px;">
+													      
+														  <div class="form-group">
+														    <label for="loserPub-vip-cardName">会员卡:</label>
+														    <input type="text" class="form-control" id="loserPub-vip-cardName" placeholder="姓名">
+														  </div>
+														  <div class="form-group forum-text">
+													    
+													    <textarea class="form-control" placeholder="输入详细描述信息" rows="6"></textarea>
+													  </div>
+													  <button type="button"  class="btn btn-default add">上传图片</button>
+												          <div class="file-box" style="display:inline-block">
+					 
+															 <input type='text' name='textfield' id='textfield-findcards4' class='txt' style="width: 160px;height:34px;"/>  
+															 <input type='button' class='btn ' value='浏览...' />
+															 <input type="file" name="fileField" class="brow-file" id="fileField-findcards4" size="28" onchange="document.getElementById('textfield-findcards4').value=this.value" />
+															 
+															
+														  </div>
+												          <button type="submit"  class="btn btn-success pull-right">提交</button>
+													      
+													</form>
+													
+										    </div>
+					      
 					   
 					   
 					   <!-- 电子产品类 -->
-                  <div class="tab-pane fade" id="loserPub-elec">
-					        
-							
-							<form action="">
-							   
-							          <div class="form-group">
-										     <label for="elecloserPub-name">姓名:</label>
-										     <input type="text" class="form-control" id="elecloserPub-name" placeholder="请输入姓名">
-									  </div>
-									  <div class="form-group">
-									    <label for="elecloserPub-brande">物品品牌:</label>
-									    <input type="text" class="form-control" id="elecloserPub-brand" placeholder="">
-									    
-									  </div>
-									  <div class="form-group">
-									    <label for="elecloserPub-place">丢失地点:</label>
-									    <input type="text" class="form-control" id="elecloserPub-place" placeholder="">
-									    
-									  </div>
-									  <div class="form-group">
-									  <label for="elecloserPub-place">丢失时间:</label>
-							                <div class='input-group date' >
-							                    <input type='text' class="form-control" id="elecloserPub-time"/>
-							                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
-							                    </span>
-							                </div>
-							          </div> 
-									  <div class="form-group forum-text">
-							    
-									    <textarea class="form-control" placeholder="输入详细描述信息" rows="6"></textarea>
-									  </div>
-							          <button type="button"  class="btn btn-default add">上传图片</button>
-							          <div class="file-box" style="display:inline-block">
- 
-										 <input type='text' name='textfield' id='textfield-findelec' class='txt' style="width: 160px;height:34px;"/>  
-										 <input type='button' class='btn ' value='浏览...' />
-										 <input type="file" name="fileField" class="brow-file" id="fileField-findelec" size="28" onchange="document.getElementById('textfield-findelec').value=this.value" />
-										 
-										
-									  </div>
-							          <button type="submit"  class="btn btn-success pull-right">提交</button>
-							
-							</form>
+                                            
+                                            <div class="tab-pane fade" id="loserPub-elec">
+										        
+												
+												<form>
+												          <div class="form-group">  
+												                 <label for="select-loserelec">电子产品类别:</label>
+													             <select class="form-control" id="select-loserelec">
+														         <option value="11">请选择</option>
+														         <option value="12"></option>
+														         <option value="13"></option>
+														         
+													      </select>
+												          </div>
+												          <div class="form-group">
+															     <label for="elecloserPub-name">姓名:</label>
+															     <input type="text" class="form-control" id="elecloserPub-name" placeholder="请输入姓名">
+														  </div>
+														  
+														  <div class="form-group">
+														        <label for="elecloserPub-place">丢失时间:</label>
+												                <div class='input-group date' >
+												                    <input data-date-format="yyyy-mm-dd" type='text' class="form-control" id="elecloserPub-time" />
+												                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+												                    </span>
+												                </div>
+														  
+														  
+														  </div>
+												          
+														  
+														  <div class="form-group">
+														    <label for="elecloserPub-place">丢失地点:</label>
+														    <input type="text" class="form-control" id="elecloserPub-place" placeholder="">
+														    
+														  </div>
+														  
+														  
+												          <div class="form-group">
+														    <label for="elecloserPub-phone">电话:</label>
+														    <input type="text" class="form-control" id="elecloserPub-phone" placeholder="">
+														    
+														  </div> 
+														  <div class="form-group forum-text">
+												    
+														    <textarea class="form-control" placeholder="输入详细描述信息" rows="6"></textarea>
+														  </div>
+												          <button type="button"  class="btn btn-default add">上传图片</button>
+												          <div class="file-box" style="display:inline-block">
+					 
+															 <input type='text' name='textfield' id='textfield-findelec' class='txt' style="width: 160px;height:34px;"/>  
+															 <input type='button' class='btn ' value='浏览...' />
+															 <input type="file" name="fileField" class="brow-file" id="fileField-findelec" size="28" onchange="document.getElementById('textfield-findelec').value=this.value" />
+															 
+															
+														  </div>
+												          <button type="submit"  class="btn btn-success pull-right">提交</button>
+												
+												</form>
+									  
+									  		</div>
 				  
-				  		
-							
-							
-							
-				  </div>
+				       <!-- 日常用品类 -->
+				                            
+				                            									        <div class="tab-pane fade" id="loserPub-day">
+										        
+												
+												<form action="">
+												          
+												          <div class="form-group">  
+												                 <label for="select-loserday">日用产品类别:</label>
+													             <select class="form-control" id="select-loserday">
+														         <option value="">请选择</option>
+														         <option value=""></option>
+														         <option value=""></option>
+														         
+													      </select>
+												          </div>
+												          
+												          <div class="form-group">
+															     <label for="dayloserPub-name">姓名:</label>
+															     <input type="text" class="form-control" id="dayloserPub-name" placeholder="请输入姓名">
+														  </div>
+														  
+														  <div class="form-group">
+														  <label for="dayloserPub-time">丢失时间:</label>
+												                <div class='input-group date' >
+												                    <input type='text' class="form-control" id="dayloserPub-time"/>
+												                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+												                    </span>
+												                </div>
+												          </div>
+														  
+														  <div class="form-group">
+														    <label for="dayloserPub-place">丢失地点:</label>
+														    <input type="text" class="form-control" id="dayloserPub-place" placeholder="">
+														    
+														  </div>
+														  
+														  <div class="form-group">
+														    <label for="dayloserPub-phone">电话:</label>
+														    <input type="text" class="form-control" id="dayloserPub-phone" placeholder="">
+														    
+														  </div>
+														  
+														  <div class="form-group forum-text">
+												    
+														    <textarea class="form-control" placeholder="输入详细描述信息" rows="6"></textarea>
+														  </div>
+												          <button type="button"  class="btn btn-default add">上传图片</button>
+												          <div class="file-box" style="display:inline-block">
+					 
+															 <input type='text' name='textfield' id='textfield-findday' class='txt' style="width: 160px;height:34px;"/>  
+															 <input type='button' class='btn ' value='浏览...' />
+															 <input type="file" name="fileField" class="brow-file" id="fileField-findday" size="28" onchange="document.getElementById('textfield-findday').value=this.value" />
+															 
+															
+														  </div>
+												          <button type="submit"  class="btn btn-success pull-right">提交</button>
+												
+												</form>
+									  
+									  		
+											</div>
+				                            
 				  
-				  <!-- 日常用品类 -->
-				  <div class="tab-pane fade" id="loserPub-day">
-					        
-							
-							<form action="">
-							   
-							          <div class="form-group">
-										     <label for="dayloserPub-name">姓名:</label>
-										     <input type="text" class="form-control" id="dayloserPub-name" placeholder="请输入姓名">
-									  </div>
-									  <div class="form-group">
-									    <label for="dayloserPub-place">丢失地点:</label>
-									    <input type="text" class="form-control" id="dayloserPub-place" placeholder="">
-									    
-									  </div>
-									  <div class="form-group">
-									  <label for="dayloserPub-time">丢失时间:</label>
-							                <div class='input-group date' >
-							                    <input type='text' class="form-control" id="dayloserPub-time"/>
-							                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
-							                    </span>
-							                </div>
-							          </div>
-									  <div class="form-group forum-text">
-							    
-									    <textarea class="form-control" placeholder="输入详细描述信息" rows="6"></textarea>
-									  </div>
-							          <button type="button"  class="btn btn-default add">上传图片</button>
-							          <div class="file-box" style="display:inline-block">
- 
-										 <input type='text' name='textfield' id='textfield-findday' class='txt' style="width: 160px;height:34px;"/>  
-										 <input type='button' class='btn ' value='浏览...' />
-										 <input type="file" name="fileField" class="brow-file" id="fileField-findday" size="28" onchange="document.getElementById('textfield-findday').value=this.value" />
-										 
-										
-									  </div>
-							          <button type="submit"  class="btn btn-success pull-right">提交</button>
-							
-							</form>
+				       <!-- 包类 -->
+				                            
+				                            <div class="tab-pane fade" id="loserPub-pack">
+										        
+												
+												<form action="">
+												          
+												          <div class="form-group">  
+												                 <label for="select-loserpack">包类类别:</label>
+													             <select class="form-control" id="select-loserpack">
+														         <option value="">请选择</option>
+														         <option value=""></option>
+														         <option value=""></option>
+														         
+													      </select>
+												          </div>
+												          
+												          <div class="form-group">
+															     <label for="packloserPub-name">姓名:</label>
+															     <input type="text" class="form-control" id="packloserPub-name" placeholder="请输入姓名">
+														  </div>
+														  
+														  <div class="form-group">
+														  <label for="packloserPub-time">丢失时间:</label>
+												                <div class='input-group date' >
+												                    <input type='text' class="form-control" id="packloserPub-time"/>
+												                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+												                    </span>
+												                </div>
+												          </div>
+														  
+														  <div class="form-group">
+														    <label for="packloserPub-place">丢失地点:</label>
+														    <input type="text" class="form-control" id="packloserPub-place" placeholder="">
+														    
+														  </div>
+														  
+														  <div class="form-group">
+														    <label for="packloserPub-phone">电话:</label>
+														    <input type="text" class="form-control" id="packloserPub-phone" placeholder="">
+														    
+														  </div>
+														  
+														  <div class="form-group forum-text">
+												    
+														    <textarea class="form-control" placeholder="输入详细描述信息" rows="6"></textarea>
+														  </div>
+												          <button type="button"  class="btn btn-default add">上传图片</button>
+												          <div class="file-box" style="display:inline-block">
+					 
+															 <input type='text' name='textfield' id='textfield-findpack' class='txt' style="width: 160px;height:34px;"/>  
+															 <input type='button' class='btn ' value='浏览...' />
+															 <input type="file" name="fileField" class="brow-file" id="fileField-findpack" size="28" onchange="document.getElementById('textfield-findpack').value=this.value" />
+															 
+															
+														  </div>
+												          <button type="submit"  class="btn btn-success pull-right">提交</button>
+												
+												</form>
+									  
+									  		
+											</div>
 				  
-				  		
-							
-							
-							
-				  </div>
+				       <!-- 配饰类 -->
 				  
-				  <!-- 包类 -->
-				  <div class="tab-pane fade" id="loserPub-pack">
-					        
-							
-							<form action="">
-							   
-							          <div class="form-group">
-										     <label for="packloserPub-name">姓名:</label>
-										     <input type="text" class="form-control" id="packloserPub-name" placeholder="请输入姓名">
-									  </div>
-									  <div class="form-group">
-									    <label for="packloserPub-place">丢失地点:</label>
-									    <input type="text" class="form-control" id="packloserPub-place" placeholder="">
-									    
-									  </div>
-									  <div class="form-group">
-									  <label for="packloserPub-time">丢失时间:</label>
-							                <div class='input-group date' >
-							                    <input type='text' class="form-control" id="packloserPub-time"/>
-							                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
-							                    </span>
-							                </div>
-							          </div>
-									  <div class="form-group forum-text">
-							    
-									    <textarea class="form-control" placeholder="输入详细描述信息" rows="6"></textarea>
-									  </div>
-							          <button type="button"  class="btn btn-default add">上传图片</button>
-							          <div class="file-box" style="display:inline-block">
- 
-										 <input type='text' name='textfield' id='textfield-findpack' class='txt' style="width: 160px;height:34px;"/>  
-										 <input type='button' class='btn ' value='浏览...' />
-										 <input type="file" name="fileField" class="brow-file" id="fileField-findpack" size="28" onchange="document.getElementById('textfield-findpack').value=this.value" />
-										 
-										
-									  </div>
-							          <button type="submit"  class="btn btn-success pull-right">提交</button>
-							
-							</form>
-				  
-				  		
-							
-							
-							
-				  </div>
-				  
-				  <!-- 配饰类 -->
-				  <div class="tab-pane fade" id="loserPub-orna">
-					        
-							
-							<form action="">
-							   
-							          <div class="form-group">
-										     <label for="ornaloserPub-name">姓名:</label>
-										     <input type="text" class="form-control" id="ornaloserPub-name" placeholder="请输入姓名">
-									  </div>
-									  <div class="form-group">
-									    <label for="ornaloserPub-place">丢失地点:</label>
-									    <input type="text" class="form-control" id="ornaloserPub-place" placeholder="">
-									    
-									  </div>
-									  <div class="form-group">
-									  <label for="ornaloserPub-place">丢失时间:</label>
-							                <div class='input-group date' >
-							                    <input type='text' class="form-control" id="ornaloserPub-place"/>
-							                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
-							                    </span>
-							                </div>
-							          </div>
-									  <div class="form-group forum-text">
-							    
-									    <textarea class="form-control" placeholder="输入详细描述信息" rows="6"></textarea>
-									  </div>
-							          <button type="button"  class="btn btn-default add">上传图片</button>
-							          <div class="file-box" style="display:inline-block">
- 
-										 <input type='text' name='textfield' id='textfield-findoran' class='txt' style="width: 160px;height:34px;"/>  
-										 <input type='button' class='btn ' value='浏览...' />
-										 <input type="file" name="fileField" class="brow-file" id="fileField-findorna" size="28" onchange="document.getElementById('textfield-findorna').value=this.value" />
-										 
-										
-									  </div>
-							          <button type="submit"  class="btn btn-success pull-right">提交</button>
-							
-							</form>
-				  
-				  		
-							
-							
-							
-				  </div>
-				  
-				  <!-- 其它 -->
-				  <div class="tab-pane fade" id="loserPub-other">
-					        
-							
-							<form action="">
-							   
-							          <div class="form-group">
-										     <label for="otherloserPub-name">姓名:</label>
-										     <input type="text" class="form-control" id="otherloserPub-name" placeholder="请输入姓名">
-									  </div>
-									  <div class="form-group">
-										     <label for="otherloserPub-product">丢失的物品名称:</label>
-										     <input type="text" class="form-control" id="otherloserPub-product" placeholder="">
-									  </div>
-									  <div class="form-group">
-									    <label for="otherloserPub-place">丢失地点:</label>
-									    <input type="text" class="form-control" id="otherloserPub-place" placeholder="">
-									    
-									  </div>
-									  <div class="form-group">
-									  <label for="otherloserPub-time">丢失时间:</label>
-							                <div class='input-group date' >
-							                    <input type='text' class="form-control" id="otherloserPub-place"/>
-							                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
-							                    </span>
-							                </div>
-							          </div>
-									  <div class="form-group forum-text">
-							    
-									    <textarea class="form-control" placeholder="输入详细描述信息" rows="6"></textarea>
-									  </div>
-							          <button type="button"  class="btn btn-default add">上传图片</button>
-							          <div class="file-box" style="display:inline-block">
- 
-										 <input type='text' name='textfield' id='textfield-findother' class='txt' style="width: 160px;height:34px;"/>  
-										 <input type='button' class='btn ' value='浏览...' />
-										 <input type="file" name="fileField" class="brow-file" id="fileField-findother" size="28" onchange="document.getElementById('textfield-findother').value=this.value" />
-										 
-										
-									  </div>
-							          <button type="submit"  class="btn btn-success pull-right">提交</button>
-							
-							</form>
-				  
-				  		
-							
-							
-							
-				  </div>
+				                            <div class="tab-pane fade" id="loserPub-orna">
+										        
+												
+												<form action="">
+												          
+												          <div class="form-group">  
+												                 <label for="select-loserorna">配饰类别:</label>
+													             <select class="form-control" id="select-loserorna">
+														         <option value="">请选择</option>
+														         <option value=""></option>
+														         <option value=""></option>
+														         
+													      </select>
+												          </div>
+												          
+												          <div class="form-group">
+															     <label for="ornaloserPub-name">姓名:</label>
+															     <input type="text" class="form-control" id="ornaloserPub-name" placeholder="请输入姓名">
+														  </div>
+														  
+														  <div class="form-group">
+														  <label for="ornaloserPub-place">丢失时间:</label>
+												                <div class='input-group date' >
+												                    <input type='text' class="form-control" id="ornaloserPub-place"/>
+												                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+												                    </span>
+												                </div>
+												          </div>
+														  
+														  <div class="form-group">
+														    <label for="ornaloserPub-place">丢失地点:</label>
+														    <input type="text" class="form-control" id="ornaloserPub-place" placeholder="">
+														    
+														  </div>
+														  
+														  <div class="form-group">
+														    <label for="ornaloserPub-phone">电话:</label>
+														    <input type="text" class="form-control" id="ornaloserPub-phone" placeholder="">
+														    
+														  </div>
+														  
+														  <div class="form-group forum-text">
+												    
+														    <textarea class="form-control" placeholder="输入详细描述信息" rows="6"></textarea>
+														  </div>
+												          <button type="button"  class="btn btn-default add">上传图片</button>
+												          <div class="file-box" style="display:inline-block">
+					 
+															 <input type='text' name='textfield' id='textfield-findoran' class='txt' style="width: 160px;height:34px;"/>  
+															 <input type='button' class='btn ' value='浏览...' />
+															 <input type="file" name="fileField" class="brow-file" id="fileField-findorna" size="28" onchange="document.getElementById('textfield-findorna').value=this.value" />
+															 
+															
+														  </div>
+												          <button type="submit"  class="btn btn-success pull-right">提交</button>
+												
+												</form>
+									  
+									  		
+											</div>
+				                            
+				       <!-- 其它 -->
+				                            <div class="tab-pane fade" id="loserPub-other">
+										        
+												
+												<form action="">
+												   
+												          <div class="form-group">
+															     <label for="otherloserPub-name">姓名:</label>
+															     <input type="text" class="form-control" id="otherloserPub-name" placeholder="请输入姓名">
+														  </div>
+														  <div class="form-group">
+															     <label for="otherloserPub-product">丢失的物品名称:</label>
+															     <input type="text" data-val="true" class="form-control" id="otherloserPub-product" placeholder="">
+														  </div>
+														  <div class="form-group">
+														    <label for="otherloserPub-place">丢失地点:</label>
+														    <input type="text" class="form-control" id="otherloserPub-place" placeholder="">
+														    
+														  </div>
+														  <div class="form-group">
+														  <label for="otherloserPub-time">丢失时间:</label>
+												                <div class='input-group date' >
+												                    <input type='text' class="form-control" id="otherloserPub-place"/>
+												                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+												                    </span>
+												                </div>
+												          </div>
+														  <div class="form-group forum-text">
+												    
+														    <textarea class="form-control" placeholder="输入详细描述信息" rows="6"></textarea>
+														  </div>
+												          <button type="button"  class="btn btn-default add">上传图片</button>
+												          <div class="file-box" style="display:inline-block">
+					 
+															 <input type='text' name='textfield' id='textfield-findother' class='txt' style="width: 160px;height:34px;"/>  
+															 <input type='button' class='btn ' value='浏览...' />
+															 <input type="file" name="fileField" class="brow-file" id="fileField-findother" size="28" onchange="document.getElementById('textfield-findother').value=this.value" />
+															 
+															
+														  </div>
+												          <button type="submit"  class="btn btn-success pull-right">提交</button>
+												</form>
+									        </div>
 					   
-					</div>
+					   </div>
 					
                   </div>
                   
@@ -503,7 +563,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                   <ul>
                     <li><a href="PubLost.jsp">发布失物信息</a></li>
                     <li><a href="ownerPub.jsp">发布招领信息</a></li>
-                    <li><a href="loserSearch.jsp">查询失物信息</a></li>
+                    <li><a href="finderSearch.jsp">查询失物信息</a></li>
                     <li><a href="ownerSearch.jsp">查询招领信息</a></li>
                   </ul>
                 </div>
@@ -535,6 +595,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		    	});
     
 		    $(".file-box").hide();
+		
 		    $(function(){
 		    	$(".add").click(function(){
 		    		$(".file-box").show();
@@ -543,16 +604,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		    });
 		    
 		    
-		    $('.date').datetimepicker({  
-		        format: 'yyyy-mm-dd',  
-		        language: 'en',  
-		        pickDate: true,  
-		        pickTime: false,  
-		        hourStep: 1,  
-		        minuteStep: 15,  
-		        secondStep: 30,  
-		        inputMask: true		        
-		      }); 
+		    $(function() {
+		        $('.date').datetimepicker({
+		        	format: 'yyyy-mm-dd',  
+			        language: 'zh-CN',
+			        minView: "month",
+			        autoclose:true,
+			        pickerPosition: "bottom-left"
+		        });
+		      });
     
     </script>
   </body>
