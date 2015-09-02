@@ -19,7 +19,7 @@ public class XtwDetail {
 	private Integer state;
 	private String phoneNumber;
 	private XtwKeyWord xtwKeyWord;
-	private XtwDetail xtwDetail;
+	private Integer toDetailId;
 	private String eventName;
 
 	public XtwDetail() {
@@ -29,7 +29,7 @@ public class XtwDetail {
 	public XtwDetail(Integer detailId, XtwUsers xtwUsers, Date dates,
 			String location, XtwGoods xtwGoods, String detailDescription,
 			Integer state, String phoneNumber, XtwKeyWord xtwKeyWord,
-			XtwDetail xtwDetail, String eventName) {
+			Integer toDetailId, String eventName) {
 		super();
 		this.detailId = detailId;
 		this.xtwUsers = xtwUsers;
@@ -40,7 +40,7 @@ public class XtwDetail {
 		this.state = state;
 		this.phoneNumber = phoneNumber;
 		this.xtwKeyWord = xtwKeyWord;
-		this.xtwDetail = xtwDetail;
+		this.toDetailId = toDetailId;
 		this.eventName = eventName;
 	}
 
@@ -116,12 +116,12 @@ public class XtwDetail {
 		this.xtwKeyWord = xtwKeyWord;
 	}
 
-	public XtwDetail getXtwDetail() {
-		return xtwDetail;
+	public Integer getToDetailId() {
+		return toDetailId;
 	}
 
-	public void setXtwDetail(XtwDetail xtwDetail) {
-		this.xtwDetail = xtwDetail;
+	public void setToDetailId(Integer toDetailId) {
+		this.toDetailId = toDetailId;
 	}
 
 	public String getEventName() {
@@ -134,12 +134,31 @@ public class XtwDetail {
 
 	@Override
 	public String toString() {
-		return "XtwDetail [detailId=" + detailId + ", xtwUsers=" + xtwUsers
-				+ ", dates=" + dates + ", location=" + location + ", xtwGoods="
-				+ xtwGoods + ", detailDescription=" + detailDescription
-				+ ", state=" + state + ", phoneNumber=" + phoneNumber
-				+ ", xtwKeyWord=" + xtwKeyWord + ", xtwDetail=" + xtwDetail
-				+ ", eventName=" + eventName + "]";
+		StringBuilder builder = new StringBuilder();
+		builder.append("XtwDetail [detailId=");
+		builder.append(detailId);
+		builder.append(", xtwUsers=");
+		builder.append(xtwUsers);
+		builder.append(", dates=");
+		builder.append(dates);
+		builder.append(", location=");
+		builder.append(location);
+		builder.append(", xtwGoods=");
+		builder.append(xtwGoods);
+		builder.append(", detailDescription=");
+		builder.append(detailDescription);
+		builder.append(", state=");
+		builder.append(state);
+		builder.append(", phoneNumber=");
+		builder.append(phoneNumber);
+		builder.append(", xtwKeyWord=");
+		builder.append(xtwKeyWord);
+		builder.append(", toDetailId=");
+		builder.append(toDetailId);
+		builder.append(", eventName=");
+		builder.append(eventName);
+		builder.append("]");
+		return builder.toString();
 	}
 
 }

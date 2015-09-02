@@ -59,7 +59,7 @@ public class SchoolDaoImplTest {
 	public void testAdd(){
 		SchoolDaoInter schoolDaoImpl = new SchoolDaoImpl();
 		XtwSchool school = new XtwSchool();
-		school.setSchoolName("农林大学");
+		school.setSchoolName("福建医科大学");
 		schoolDaoImpl.add(school);
 	}
 }

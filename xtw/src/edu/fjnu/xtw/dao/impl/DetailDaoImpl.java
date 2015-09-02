@@ -38,7 +38,7 @@ public class DetailDaoImpl implements DetailDaoInter {
 			pstmt.setInt(6, detail.getState());
 			pstmt.setString(7, detail.getPhoneNumber());
 			pstmt.setInt(8, detail.getXtwKeyWord().getKeywordId());
-			pstmt.setInt(9, detail.getXtwDetail().getDetailId());
+			pstmt.setInt(9, detail.getToDetailId());
 			pstmt.setString(10, detail.getEventName());
 
 			// 执行SQL语句
