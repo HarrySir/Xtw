@@ -4,11 +4,11 @@
 	<named-config name="oracle-config"> 
 	<!--
 		远程数据库用这个
+	-->
 		<property name="jdbcUrl">jdbc:oracle:thin:@103.44.145.243:55090:oracle</property>
-	-->
 	<!-- 本地连接数据库
-	-->
 		<property name="jdbcUrl">jdbc:oracle:thin:@localhost:1521:orcl</property>
+	-->
 		<property name="driverClass">oracle.jdbc.driver.OracleDriver</property>
 		<property name="user">xtw</property>
 		<property name="password">xtw123</property>

@@ -1,6 +1,9 @@
 package edu.fjnu.xtw.web.servlet;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -66,6 +69,7 @@ public class PutLostServlet extends HttpServlet {
 	 * @param fileItemsList
 	 * @throws ServletException
 	 * @throws IOException
+	 * @throws ParseException 
 	 */
 	private void putLostDailyGoods(HttpServletRequest request, HttpServletResponse response, 
 			List<FileItem> fileItemsList) throws ServletException, IOException {
@@ -88,7 +92,7 @@ public class PutLostServlet extends HttpServlet {
 		 */
 		FileItem fileItemOwnerName = fileItemsList.get(2);
 		//得到姓名
-		String ownerName = fileItemOwnerName.getString();
+		String ownerName = fileItemOwnerName.getString("UTF-8");
 		//设置姓名到goods对象
 		xtwGoods.setOwnerName(ownerName);
 		
@@ -96,48 +100,61 @@ public class PutLostServlet extends HttpServlet {
 		 * 处理时间
 		 */
 		FileItem fileItemTime = fileItemsList.get(3);
-		Date lostTime = this.dealWithTime(fileItemTime);
+		Date lostTime = null;
+		try {
+			lostTime = this.dealWithTime(fileItemTime);
+		} 
+		catch (ParseException e) {
+			e.printStackTrace();
+		}
 		
 		/*
 		 * 处理地点
 		 */
-		FileItem fileItemLocation = fileItemsList.get(4);
-		
+//		FileItem fileItemLocation = fileItemsList.get(4);
+			
 		/*
 		 * 处理手机号码
-		 */
+		 */	 
 		FileItem fileItemPhone = fileItemsList.get(5);
-		String phone = fileItemPhone.getString();
+		String phone = fileItemPhone.getString("UTF-8");
 		xtwDetail.setPhoneNumber(phone);
 		
 		/*
 		 * 处理详细描述
-		 */
+		 */ 
 		FileItem fileItemDetail = fileItemsList.get(6);
 		//得到详细描述
-		String detailDescription = fileItemDetail.getString();
+		String detailDescription = fileItemDetail.getString("UTF-8");
 		xtwDetail.setDetailDescription(detailDescription);
+		/*以上past*/
 		
 		/*
 		 * 处理用户ID
-		 */
+		 */ 
 		XtwUsers user = (XtwUsers) request.getSession().getAttribute("session_user");
 		xtwDetail.setXtwUsers(user);
+		System.out.println(xtwDetail.getXtwUsers());
+		
 		
 		/*
 		 * 处理关键词ID
 		 */
-		XtwKeyWord xtwKeyWord = this.dealWithKeyWord(xtwDetail.getDetailDescription());
-		xtwDetail.setXtwKeyWord(xtwKeyWord);
+		/*XtwKeyWord xtwKeyWord = this.dealWithKeyWord(xtwDetail.getDetailDescription());
+		xtwDetail.setXtwKeyWord(xtwKeyWord);*/
+		
 		
 		/*
 		 * 处理对应事件ID
 		 */
+		 
+		
 		
 		/*
 		 * 处理对应事件名称
 		 */
-		xtwDetail.setEventName("失物");
+		 
+		/*xtwDetail.setEventName("失物");*/
 	
 	}
 	
@@ -217,22 +234,31 @@ public class PutLostServlet extends HttpServlet {
 	}
 	
 	/**
-	 * 处理丢失时间，返回一个时间对象
+	 * 处理丢失时间，将字符串形式的时间转换成时间对象，并返回
 	 * @param fileItemTime
 	 * @return
+	 * @throws UnsupportedEncodingException 
+	 * @throws ParseException 
 	 */
-	private Date dealWithTime(FileItem fileItemTime){
-		return new Date();
+	private Date dealWithTime(FileItem fileItemTime) 
+			throws UnsupportedEncodingException, ParseException{
+		//得到用户选择的时间
+		String lostTime = fileItemTime.getString("UTF-8");
+		//创建格式化时间对象，指定格式
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		//转换成时间对象返回
+		return dateFormat.parse(lostTime);
 	}
 	
 	/**
 	 * 得到用户选择的类型，返回类型对象
 	 * @param fileItemType
 	 * @return
+	 * @throws UnsupportedEncodingException 
 	 */
-	private XtwType dealWithType(FileItem fileItemType){
+	private XtwType dealWithType(FileItem fileItemType) throws UnsupportedEncodingException{
 		//得到日常用品类的类型
-		String typeName = fileItemType.getString();
+		String typeName = fileItemType.getString("UTF-8");
 		TypeServiceInter typeServiceImpl = new TypeServiceImpl();
 		//得到type对象
 		XtwType xtwType = typeServiceImpl.getTypeByName(typeName);

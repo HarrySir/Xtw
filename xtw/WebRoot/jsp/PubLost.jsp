@@ -321,13 +321,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				                            									        <div class="tab-pane fade" id="loserPub-day">
 										        
 												
-												<form action="">
-												          
+												<form action="<c:url value='/PutLostServlet'/>" method="post" enctype="multipart/form-data">
+												          <input type="hidden" name="act" value="dailyGoods"/>
 												          <div class="form-group">  
 												                 <label for="select-loserday">日用产品类别:</label>
-													             <select class="form-control" id="select-loserday">
-														         <option value="">请选择</option>
-														         <option value=""></option>
+													      <select class="form-control" id="select-loserday" name="type">
+														         <option value="请选择">请选择</option>
+														         <option value="雨伞">雨伞</option>
 														         <option value=""></option>
 														         
 													      </select>
@@ -335,13 +335,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 												          
 												          <div class="form-group">
 															     <label for="dayloserPub-name">姓名:</label>
-															     <input type="text" class="form-control" id="dayloserPub-name" placeholder="请输入姓名">
+															     <input type="text" class="form-control" id="dayloserPub-name" placeholder="请输入姓名" name="ownerName">
 														  </div>
 														  
 														  <div class="form-group">
 														  <label for="dayloserPub-time">丢失时间:</label>
 												                <div class='input-group date' >
-												                    <input type='text' class="form-control" id="dayloserPub-time"/>
+												                    <input type='text' class="form-control" id="dayloserPub-time" name="lostTime"/>
 												                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
 												                    </span>
 												                </div>
@@ -349,19 +349,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 														  
 														  <div class="form-group">
 														    <label for="dayloserPub-place">丢失地点:</label>
-														    <input type="text" class="form-control" id="dayloserPub-place" placeholder="">
+														    <input type="text" class="form-control" id="dayloserPub-place" placeholder="请输入丢失地点" name="lostLocation">
 														    
 														  </div>
 														  
 														  <div class="form-group">
-														    <label for="dayloserPub-phone">电话:</label>
-														    <input type="text" class="form-control" id="dayloserPub-phone" placeholder="">
+														    <label for="dayloserPub-phone">手机号码:</label>
+														    <input type="text" class="form-control" id="dayloserPub-phone" placeholder="请输入手机号码" name="phone">
 														    
 														  </div>
 														  
 														  <div class="form-group forum-text">
 												    
-														    <textarea class="form-control" placeholder="输入详细描述信息" rows="6"></textarea>
+														    <textarea class="form-control" placeholder="输入详细描述信息" rows="6" name="description"></textarea>
 														  </div>
 												          <button type="button"  class="btn btn-default add">上传图片</button>
 												          <div class="file-box" style="display:inline-block">
