@@ -46,7 +46,7 @@ public class RunStopWord {
 
 	
 	
-	public void fileExcludeStopWord(String TString) throws IOException {
+	public String fileExcludeStopWord(String TString) throws IOException {
 		// 读取原文件和停用词表
 		//BufferedReader srcFileBr = new BufferedReader(new InputStreamReader(
 		//		new FileInputStream(new File(srcFile))));
@@ -76,13 +76,13 @@ public class RunStopWord {
 		if (0 == init_flag) {
 			nativeBytes = CLibrary.Instance.NLPIR_GetLastErrorMsg();
 			System.err.println("初始化失败！fail reason is " + nativeBytes);
-			return;
+			return null;
 		}
 		// String argu = "." ;
 		//添加用户词典
-//		CLibrary.Instance.NLPIR_AddUserWord("立诚");
-//		CLibrary.Instance.NLPIR_AddUserWord("笃行");
-//		CLibrary.Instance.NLPIR_AddUserWord("不小心");
+		CLibrary.Instance.NLPIR_AddUserWord("立诚");
+		CLibrary.Instance.NLPIR_AddUserWord("笃行");
+		//CLibrary.Instance.NLPIR_AddUserWord("不小心");
 		instance.NLPIR_ImportUserDict(System.getProperty("user.dir")+"\\source\\userdic.txt");
 		String paragraph = TString;
 		
@@ -97,9 +97,9 @@ public class RunStopWord {
 				if (stopWordSet.contains(resultArray[i])) {
 					resultArray[i] = null;
 				}
-				// 把过滤后的字符串数组存入到一个字符串中
-				StringBuffer finalStr = new StringBuffer();
 			
+			// 把过滤后的字符串数组存入到一个字符串中
+			StringBuffer finalStr = new StringBuffer();
 			for (int i1 = 0; i1 < resultArray.length; i1++) {
 				if (resultArray[i1] != null) {
 					finalStr = finalStr.append(resultArray[i1]).append(" ");
@@ -109,10 +109,12 @@ public class RunStopWord {
 			//destFileBw.write(finalStr.toString());
 			//destFileBw.newLine();
 			if(i == resultArray.length -1)
-				System.out.println(finalStr.toString());
-			}
-		// 关闭输入流
-		StopWordFileBr.close();
+				 // 关闭输入流
+				 StopWordFileBr.close();
+				 return finalStr.toString();
+			//System.out.println(finalStr.toString());
+		}
+		return null;
 		
 		/*
 		 * catch(FileNotFoundException e){ e.printStackTrace() ;

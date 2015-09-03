@@ -1,10 +1,24 @@
 package edu.fjnu.xtw.nlpir;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStreamReader;
+import java.util.HashSet;
+import java.util.Set;
+
 import com.sun.jna.Library;
 import com.sun.jna.Native;
 
+import edu.fjnu.xtw.nlpir.RunStopWord.CLibrary;
+
 public class GetKeyWord {
+	
+	private static final String stopWordTable = "."+File.separator + "StopWordTable.txt";
+	
 	public interface CLibrary extends Library{
+
 		CLibrary Instance = (CLibrary) Native.loadLibrary("NLPIR",
 				CLibrary.class);
 	    //初始化
@@ -39,22 +53,51 @@ public class GetKeyWord {
 	    public void NLPIR_Exit();    
 	}
 	
-	public void GetBegin(String Gstring) {
-		
+	public String GetBegin(String Gstring) throws Exception {
+		//读取停用词表
+		BufferedReader StopWordFileBr = new BufferedReader(
+				new InputStreamReader(new FileInputStream(new File(stopWordTable))));
+		Set stopWordSet = new HashSet<String>();
+		// 初始化停用词集
+		String stopWord = null;
+		for (; (stopWord = StopWordFileBr.readLine()) != null;) {
+				stopWordSet.add(stopWord);
+			}
 		CLibrary instance = (CLibrary)Native.loadLibrary(System.getProperty("user.dir")+"\\NLPIR", CLibrary.class);
 		String argu = ".";
 		String system_charset = "UTF-8";
 		int charset_type = 1;
 		int init_flag = CLibrary.Instance.NLPIR_Init(argu, charset_type, "0");
+		
 		String resultString = null;
 		if (0 == init_flag) {
 			resultString = CLibrary.Instance.NLPIR_GetLastErrorMsg();
 			System.err.println("初始化失败！fail reason is " + resultString);
-			return;
+			return null;
 		}
 		instance.NLPIR_ImportUserDict(System.getProperty("user.dir")+"\\source\\userdic.txt");
-		resultString = instance.NLPIR_GetKeyWords(Gstring,10,false);
-        System.out.println("所提取的关键字为：" + resultString);
+		String paragraph = Gstring;
+		//对给所语句先进行分词
+		String spiltResultStr = CLibrary.Instance.NLPIR_ParagraphProcess(paragraph,0);
+		String[] resultArray = spiltResultStr.split(" ");
+		// 过滤停用词
+		for (int i = 0; i < resultArray.length; i++) {
+			if (stopWordSet.contains(resultArray[i])) {
+						resultArray[i] = null;
+			}
+		// 把过滤后的字符串数组存入到一个字符串中
+		StringBuffer finalStr = new StringBuffer();
+		for (int i1 = 0; i1 < resultArray.length; i1++) {
+			if (resultArray[i1] != null) {
+				finalStr = finalStr.append(resultArray[i1]).append(" ");
+				}
+			}
+		if(i == resultArray.length -1)
+			resultString = instance.NLPIR_GetKeyWords(finalStr.toString(),15,false);
+		}
+		
+        //System.out.println("所提取的关键字为：" + resultString);
+        return resultString ;
 	}
 	
 }

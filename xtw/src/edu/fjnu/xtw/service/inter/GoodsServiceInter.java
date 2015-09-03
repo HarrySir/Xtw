@@ -16,4 +16,11 @@ public interface GoodsServiceInter {
 	 * @return
 	 */
 	public int addGoods(XtwGoods goods);
+	
+	/**
+	 * 通过id查找物品
+	 * @param id
+	 * @return
+	 */
+	public XtwGoods findGoodsById(Integer id);
 }

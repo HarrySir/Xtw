@@ -335,7 +335,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 												          
 												          <div class="form-group">
 															     <label for="dayloserPub-name">姓名:</label>
-															     <input type="text" class="form-control" id="dayloserPub-name" placeholder="请输入姓名" name="ownerName">
+															     <input type="text" class="form-control" id="dayloserPub-name" placeholder="请输入姓名" name="ownerName" vlaue="李梓鑫">
 														  </div>
 														  
 														  <div class="form-group">
@@ -349,25 +349,26 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 														  
 														  <div class="form-group">
 														    <label for="dayloserPub-place">丢失地点:</label>
-														    <input type="text" class="form-control" id="dayloserPub-place" placeholder="请输入丢失地点" name="lostLocation">
+														    <input type="text" class="form-control" id="dayloserPub-place" placeholder="请输入丢失地点" name="lostLocation" value="软楼">
 														    
 														  </div>
 														  
 														  <div class="form-group">
 														    <label for="dayloserPub-phone">手机号码:</label>
-														    <input type="text" class="form-control" id="dayloserPub-phone" placeholder="请输入手机号码" name="phone">
+														    <input type="text" class="form-control" id="dayloserPub-phone" placeholder="请输入手机号码" name="phone" value="18695607232">
 														    
 														  </div>
 														  
 														  <div class="form-group forum-text">
 												    
-														    <textarea class="form-control" placeholder="输入详细描述信息" rows="6" name="description"></textarea>
+														    <textarea class="form-control" placeholder="输入详细描述信息" rows="6" name="description" value="今天丢了手机"></textarea>
 														  </div>
 												          <button type="button"  class="btn btn-default add">上传图片</button>
 												          <div class="file-box" style="display:inline-block">
-					 
+					 										 
 															 <input type='text' name='textfield' id='textfield-findday' class='txt' style="width: 160px;height:34px;"/>  
-															 <input type='button' class='btn ' value='浏览...' />
+															 
+															 <input type='button' class='btn' value='浏览...' />
 															 <input type="file" name="fileField" class="brow-file" id="fileField-findday" size="28" onchange="document.getElementById('textfield-findday').value=this.value" />
 															 
 															

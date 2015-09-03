@@ -12,6 +12,7 @@ import java.sql.Statement;
 import javax.sql.rowset.serial.SerialBlob;
 
 import edu.fjnu.xtw.dao.inter.GoodsDaoInter;
+import edu.fjnu.xtw.dao.inter.TypeDaoInter;
 import edu.fjnu.xtw.domain.XtwGoods;
 import edu.fjnu.xtw.utils.JdbcUtils;
 
@@ -20,7 +21,10 @@ import edu.fjnu.xtw.utils.JdbcUtils;
  *
  */
 public class GoodsDaoImpl implements GoodsDaoInter {
+	private TypeDaoInter typeDaoImpl = new TypeDaoImpl();
 	private static final String ADD_GOODS = "insert into XTW_GOODS values(seq_on_goods.nextval,?,?,?,?,?)";
+	private static final String FIND_GOODS_BY_ID = "select * from XTW_GOODS where goodsId=?";
+	
 	
 	@Override
 	public Object addGoods(XtwGoods goods) {
@@ -54,4 +58,38 @@ public class GoodsDaoImpl implements GoodsDaoInter {
 		return id;	
 	}
 
+	@Override
+	public XtwGoods findById(Integer id) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		XtwGoods goods = null;
+		try {
+			conn = JdbcUtils.getInstance().getConnection();
+			pstmt = conn.prepareStatement(FIND_GOODS_BY_ID);
+			pstmt.setInt(1, id);
+			rset = pstmt.executeQuery();
+			if (rset == null) {
+				return null;
+			}
+			if (rset.next()) {
+				goods = new XtwGoods();
+				goods.setGoodsId(rset.getInt("goodsId"));
+				goods.setXtwType(typeDaoImpl.findById(rset.getInt("typeId")));
+				goods.setPicture(rset.getBytes("picture"));
+				goods.setBrand(rset.getString("brand"));
+				goods.setCardNumber(rset.getString("cardNumber"));
+				goods.setOwnerName(rset.getString("ownerName"));
+			}
+		} 
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		finally{
+			JdbcUtils.getInstance().releaseRes(conn, pstmt, rset);
+		}
+		return goods;
+	}
+
+	
 }

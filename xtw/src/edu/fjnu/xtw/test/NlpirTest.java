@@ -14,12 +14,14 @@ public class NlpirTest {
 	 * @throws IOException
 	 */
 	@Test
-	public void test() throws IOException{
-			String testString = "今天在人文楼捡到一部手机，iphone6，屏保图案是个男生，本人联系方式15659119418";
-			RunStopWord test1 =new RunStopWord();
-			GetKeyWord test2 = new GetKeyWord();
-			test1.fileExcludeStopWord(testString);
-			test2.GetBegin(testString);
+	public void test() throws Exception{
+			String testString = "今天在人文楼捡到一部手机,iphone6，屏保图案是个男生，本人联系方式15659119418";
+			RunStopWord runStopWord =new RunStopWord();
+			GetKeyWord getKeyWord = new GetKeyWord();
+			String lostStopWord = runStopWord.fileExcludeStopWord(testString);
+			System.out.println(lostStopWord);
+			String keywordString = getKeyWord.GetBegin(testString);
+			System.out.println(keywordString);
 			
 		}
 	

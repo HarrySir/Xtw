@@ -20,4 +20,9 @@ public class GoodsServiceImpl implements GoodsServiceInter {
 		return (Integer)goodsDaoImpl.addGoods(goods);
 	}
 
+	@Override
+	public XtwGoods findGoodsById(Integer id) {
+		return goodsDaoImpl.findById(id);
+	}
+
 }

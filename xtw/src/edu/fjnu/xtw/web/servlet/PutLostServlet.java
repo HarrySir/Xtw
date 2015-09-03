@@ -1,6 +1,11 @@
 package edu.fjnu.xtw.web.servlet;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -16,14 +21,17 @@ import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.apache.commons.io.IOUtils;
 
 import edu.fjnu.xtw.domain.XtwDetail;
 import edu.fjnu.xtw.domain.XtwGoods;
 import edu.fjnu.xtw.domain.XtwKeyWord;
 import edu.fjnu.xtw.domain.XtwType;
 import edu.fjnu.xtw.domain.XtwUsers;
+import edu.fjnu.xtw.service.impl.GoodsServiceImpl;
 import edu.fjnu.xtw.service.impl.KeyWordServiceImpl;
 import edu.fjnu.xtw.service.impl.TypeServiceImpl;
+import edu.fjnu.xtw.service.inter.GoodsServiceInter;
 import edu.fjnu.xtw.service.inter.KeyWordServiceInter;
 import edu.fjnu.xtw.service.inter.TypeServiceInter;
 
@@ -34,7 +42,7 @@ public class PutLostServlet extends HttpServlet {
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+			throws ServletException, IOException{
 		response.setContentType("text/html;charset=UTF-8");
 		
 		//得到工厂
@@ -76,8 +84,8 @@ public class PutLostServlet extends HttpServlet {
 		/*
 		 * 处理日常用品类型
 		 */
-		FileItem fileItemType = fileItemsList.get(1);
-		XtwType xtwType = this.dealWithType(fileItemType);
+//		FileItem fileItemType = fileItemsList.get(1);
+//		XtwType xtwType = this.dealWithType(fileItemType);
 		
 		//创建物品对象
 		XtwGoods xtwGoods = new XtwGoods();
@@ -85,7 +93,7 @@ public class PutLostServlet extends HttpServlet {
 		XtwDetail xtwDetail = new XtwDetail();
 		
 		//把type对象设置给物品对象
-		xtwGoods.setXtwType(xtwType);
+//		xtwGoods.setXtwType(xtwType);
 		
 		/*
 		 * 处理拥有者的姓名
@@ -130,8 +138,8 @@ public class PutLostServlet extends HttpServlet {
 		/*
 		 * 处理用户ID
 		 */ 
-		XtwUsers user = (XtwUsers) request.getSession().getAttribute("session_user");
-		xtwDetail.setXtwUsers(user);
+//		XtwUsers user = (XtwUsers) request.getSession().getAttribute("session_user");
+//		xtwDetail.setXtwUsers(user);
 		/*以上past*/
 		
 		/*
@@ -142,18 +150,32 @@ public class PutLostServlet extends HttpServlet {
 		System.out.println(xtwDetail.getXtwKeyWord());
 		
 		
-		/*
-		 * 处理对应事件ID
-		 */
-		 
-		
 		
 		/*
 		 * 处理对应事件名称
 		 */
 		 
-		/*xtwDetail.setEventName("失物");*/
-	
+		xtwDetail.setEventName("失物");
+		
+		/*
+		 * 处理上传的图片
+		 */
+//		FileItem fileItemPicture = fileItemsList.get(8);
+//		byte[] pictureByte = IOUtils.toByteArray(fileItemPicture.getInputStream());
+//		xtwGoods.setPicture(pictureByte);
+		
+		/*
+		 * 添加物品，返回物品ID
+		 */
+//		GoodsServiceInter goodsServiceImpl = new GoodsServiceImpl();
+//		Integer id = goodsServiceImpl.addGoods(xtwGoods);
+//		xtwGoods.setGoodsId(id);
+//		xtwDetail.setXtwGoods(xtwGoods);
+		
+		/*
+		 * 处理对应事件ID
+		 */
+		
 	}
 	
 	private void putLostCardMessage(HttpServletRequest request, HttpServletResponse response)
