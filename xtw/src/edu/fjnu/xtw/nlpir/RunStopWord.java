@@ -16,7 +16,8 @@ public class RunStopWord {
 	// 停用词词表
 	//public static final String stopWordTable = "." + File.separator + "srcFile"
 	//		+ File.separator + "StopWordTable.txt";
-	private static final String stopWordTable = "."+File.separator + "StopWordTable.txt";
+//	private static final String stopWordTable = ".."+File.separator + "StopWordTable.txt";
+	private static final String stopWordTable = "E:\\寻它网\\XunTaWang\\xtw\\xtw\\StopWordTable.txt";
 	public interface CLibrary extends Library {
 		// 定义并初始化接口的静态变量
 		CLibrary Instance = (CLibrary) Native.loadLibrary("NLPIR",
@@ -47,6 +48,7 @@ public class RunStopWord {
 	
 	
 	public String fileExcludeStopWord(String TString) throws IOException {
+		System.out.println(stopWordTable);
 		// 读取原文件和停用词表
 		//BufferedReader srcFileBr = new BufferedReader(new InputStreamReader(
 		//		new FileInputStream(new File(srcFile))));
@@ -98,23 +100,24 @@ public class RunStopWord {
 					resultArray[i] = null;
 				}
 			
-			// 把过滤后的字符串数组存入到一个字符串中
-			StringBuffer finalStr = new StringBuffer();
-			for (int i1 = 0; i1 < resultArray.length; i1++) {
-				if (resultArray[i1] != null) {
-					finalStr = finalStr.append(resultArray[i1]).append(" ");
+				// 把过滤后的字符串数组存入到一个字符串中
+				StringBuffer finalStr = new StringBuffer();
+				for (int i1 = 0; i1 < resultArray.length; i1++) {
+					if (resultArray[i1] != null) {
+						finalStr = finalStr.append(resultArray[i1]).append(" ");
+					}
 				}
-			}
-			// 将过滤后的文本信息写入指定文件中
-			//destFileBw.write(finalStr.toString());
-			//destFileBw.newLine();
-			if(i == resultArray.length -1)
-				 // 关闭输入流
-				 StopWordFileBr.close();
-				 return finalStr.toString();
-			//System.out.println(finalStr.toString());
+				// 将过滤后的文本信息写入指定文件中
+				//destFileBw.write(finalStr.toString());
+				//destFileBw.newLine();
+				if(i == resultArray.length -1)
+					 return finalStr.toString();
+				//System.out.println(finalStr.toString());
 		}
+		// 关闭输入流
+		StopWordFileBr.close();
 		return null;
+		
 		
 		/*
 		 * catch(FileNotFoundException e){ e.printStackTrace() ;

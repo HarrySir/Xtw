@@ -22,7 +22,7 @@ public interface KeyWordServiceInter {
 	 * @param detailString
 	 * @return
 	 */
-	public String getKeyWordString (String detailString);
+	public String getKeyWordString (String detailString) throws Exception;
 	
 	/**
 	 * 通过ID查找关键词记录

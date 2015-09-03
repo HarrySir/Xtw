@@ -28,6 +28,7 @@ import edu.fjnu.xtw.domain.XtwGoods;
 import edu.fjnu.xtw.domain.XtwKeyWord;
 import edu.fjnu.xtw.domain.XtwType;
 import edu.fjnu.xtw.domain.XtwUsers;
+import edu.fjnu.xtw.nlpir.RunStopWord;
 import edu.fjnu.xtw.service.impl.GoodsServiceImpl;
 import edu.fjnu.xtw.service.impl.KeyWordServiceImpl;
 import edu.fjnu.xtw.service.impl.TypeServiceImpl;
@@ -247,7 +248,15 @@ public class PutLostServlet extends HttpServlet {
 	 */
 	private XtwKeyWord dealWithKeyWord(String keyWordStr){
 		KeyWordServiceInter keyWordServiceImpl = new KeyWordServiceImpl();
-		String keyWordString = keyWordServiceImpl.getKeyWordString(keyWordStr);
+		System.out.println(keyWordStr);
+		String keyWordString = null;
+		try {
+			keyWordString = keyWordServiceImpl.getKeyWordString(keyWordStr);
+		} 
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		System.out.println("提取关键字后：" + keyWordString);
 		int id = keyWordServiceImpl.addKeyWord(keyWordString);
 		XtwKeyWord xtwKeyWord = keyWordServiceImpl.findById(id);
 		return xtwKeyWord;

@@ -3,12 +3,15 @@
 	<!-- 专门为oracle提供的配置信息 -->
 	<named-config name="oracle-config"> 
 	<!--
-		远程数据库用这个
+		远程访问数据库
 		<property name="jdbcUrl">jdbc:oracle:thin:@103.44.145.243:55090:oracle</property>
 	-->
 	<!-- 本地连接数据库
-	-->
 		<property name="jdbcUrl">jdbc:oracle:thin:@localhost:1521:orcl</property>
+	-->
+	<!-- 局域网访问数据库
+	 -->
+		<property name="jdbcUrl">jdbc:oracle:thin:@192.168.199.95:1521:oracle</property>
 		<property name="driverClass">oracle.jdbc.driver.OracleDriver</property>
 		<property name="user">xtw</property>
 		<property name="password">xtw123</property>
