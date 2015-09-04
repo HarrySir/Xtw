@@ -318,7 +318,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				  
 				       <!-- 日常用品类 -->
 				                            
-				                            									        <div class="tab-pane fade" id="loserPub-day">
+				                            <div class="tab-pane fade" id="loserPub-day">
 										        
 												
 												<form action="<c:url value='/PutLostServlet'/>" method="post" enctype="multipart/form-data">
@@ -521,11 +521,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 															     <label for="otherloserPub-product">丢失的物品名称:</label>
 															     <input type="text" data-val="true" class="form-control" id="otherloserPub-product" placeholder="">
 														  </div>
-														  <div class="form-group">
-														    <label for="otherloserPub-place">丢失地点:</label>
-														    <input type="text" class="form-control" id="otherloserPub-place" placeholder="">
-														    
-														  </div>
+														  
 														  <div class="form-group">
 														  <label for="otherloserPub-time">丢失时间:</label>
 												                <div class='input-group date' >
@@ -534,6 +530,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 												                    </span>
 												                </div>
 												          </div>
+														  <div class="form-group">
+														    <label for="otherloserPub-place">丢失地点:</label>
+														    <input type="text" class="form-control" id="otherloserPub-place" placeholder="">
+														    
+														  </div>
+														  
+														  <div class="form-group">
+														    <label for="otherloserPub-phone">电话:</label>
+														    <input type="text" class="form-control" id="otherloserPub-phone" placeholder="">
+														    
+														  </div>
+														  
 														  <div class="form-group forum-text">
 												    
 														    <textarea class="form-control" placeholder="输入详细描述信息" rows="6"></textarea>

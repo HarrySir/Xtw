@@ -19,7 +19,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../css/Xunta.index.css">
      
-    
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap-datetimepicker.min.css">
     <meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
@@ -124,19 +124,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                   <div class="thread-list">
                     <ul id="myTab" class="nav nav-tabs ">
 					   <li class="active">
-					      <a href="#ownerPub-cards" data-toggle="tab">卡类</a>
-					   <li><a href="#ownerPub-elec" data-toggle="tab">电子产品类</a></li>
-					   <li><a href="#ownerPub-day" data-toggle="tab">日常用品类</a></li>
-					   <li><a href="#ownerPub-pack" data-toggle="tab">包类</a></li>
-					   <li><a href="#ownerPub-orna" data-toggle="tab">配饰类</a></li>
-					   <li><a href="#ownerPub-other" data-toggle="tab">其它</a></li>
+					      <a href="#finderPub-cards" data-toggle="tab">卡类</a>
+					   <li><a href="#finderPub-elec" data-toggle="tab">电子产品类</a></li>
+					   <li><a href="#finderPub-day" data-toggle="tab">日常用品类</a></li>
+					   <li><a href="#finderPub-pack" data-toggle="tab">包类</a></li>
+					   <li><a href="#finderPub-orna" data-toggle="tab">配饰类</a></li>
+					   <li><a href="#finderPub-other" data-toggle="tab">其它</a></li>
 					   
 					</ul>
 					<div id="myTabContent" class="tab-content">
 					
-					   <div class="tab-pane fade in active" id="ownerPub-cards">
+					   <div class="tab-pane fade in active" id="finderPub-cards">
 					            <div class="form-group" >
-								      <select class="form-control" id="ownerPubCards">
+								      <select class="form-control" id="finderPubCards">
 								         <option value="-1">请选择卡类别</option>
 								         <option value="0">银行卡</option>
 								         <option value="1">餐卡</option>
@@ -144,91 +144,153 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								         <option value="3">会员卡</option>
 								      </select>
 								</div>
-								<form class="form-inline form-trans" id="ownerPub-cards1" role="form" style="display:none;margin-top: 15px;">
+								<form class=" form-trans" id="finderPub-cards1" role="form" style="display:none;margin-top: 15px;">
 								      <div class="form-group">
-									    <label for="ownerPub-bank-card">银行卡:</label>
-									    <input type="text" class="form-control" id="ownerPub-bank-card" placeholder="请输入卡号">
+									    <label for="finderPub-bank-card">银行卡:</label>
+									    <input type="text" class="form-control" id="finderPub-bank-card" placeholder="请输入卡号">
 									  </div>
 									  <div class="form-group">
-									    <label for="ownerPub-bank-cardName">持卡人姓名:</label>
-									    <input type="text" class="form-control" id="ownerPub-bank-cardName" placeholder="">
+									    <label for="finderPub-bank-cardName">持卡人姓名:</label>
+									    <input type="text" class="form-control" id="finderPub-bank-cardName" placeholder="">
 									  </div>
+									  <div class="form-group forum-text">
+													    
+										<textarea class="form-control" placeholder="输入详细描述信息" rows="6"></textarea>
+									  </div>
+									  <button type="button"  class="btn btn-default add">上传图片</button>
+									  <div class="file-box" style="display:inline-block">
+					 
+									  <input type='text' name='textfield' id='textfield-finderPubcards1' class='txt' style="width: 160px;height:34px;"/>  
+									  <input type='button' class='btn ' value='浏览...' />
+									  <input type="file" name="fileField" class="brow-file" id="fileField-finderPubcards1" size="28" onchange="document.getElementById('textfield-finderPubcards1').value=this.value" />
+															 
+															
+									  </div>
+									  <button type="submit"  class="btn btn-success pull-right">提交</button>
 								      
 								</form>
 								
-								<form class="form-inline form-trans" id="ownerPub-cards2" role="form" style="display:none;margin-top: 15px;">
+								<form class=" form-trans" id="finderPub-cards2" role="form" style="display:none;margin-top: 15px;">
 								      <div class="form-group">
-									    <label for="ownerPub-meal-card">餐卡:</label>
-									    <input type="text" class="form-control" id="ownerPub-meal-card" placeholder="学院">
+									    <label for="finderPub-meal-card">餐卡:</label>
+									    <input type="text" class="form-control" id="finderPub-meal-card" placeholder="学院">
 									  </div>
 									  <div class="form-group">
-									    <label for="ownerPub-meal-cardName">姓名:</label>
-									    <input type="text" class="form-control" id="ownerPub-meal-cardName" placeholder="">
+									    <label for="finderPub-meal-cardName">姓名:</label>
+									    <input type="text" class="form-control" id="finderPub-meal-cardName" placeholder="">
 									  </div>
+									  
+									  <div class="form-group forum-text">
+													    
+										<textarea class="form-control" placeholder="输入详细描述信息" rows="6"></textarea>
+									  </div>
+									  <button type="button"  class="btn btn-default add">上传图片</button>
+									  <div class="file-box" style="display:inline-block">
+					 
+									  <input type='text' name='textfield' id='textfield-finderPubcards2' class='txt' style="width: 160px;height:34px;"/>  
+									  <input type='button' class='btn ' value='浏览...' />
+									  <input type="file" name="fileField" class="brow-file" id="fileField-finderPubcards2" size="28" onchange="document.getElementById('textfield-finderPubcards2').value=this.value" />
+															 
+															
+									  </div>
+									  <button type="submit"  class="btn btn-success pull-right">提交</button>
 								      
 								</form>
-								<form class="form-inline form-trans" id="ownerPub-cards3" role="form" style="display:none;margin-top: 15px;">
+								<form class=" form-trans" id="finderPub-cards3" role="form" style="display:none;margin-top: 15px;">
 								      <div class="form-group">
-									    <label for="ownerPub-ide-card">身份证:</label>
-									    <input type="text" class="form-control" id="ownerPub-ide-card" placeholder="身份证号码">
+									    <label for="finderPub-ide-card">身份证:</label>
+									    <input type="text" class="form-control" id="finderPub-ide-card" placeholder="身份证号码">
 									  </div>
 									  <div class="form-group">
-									    <label for="ownerPub-ide-cardName">姓名:</label>
-									    <input type="text" class="form-control" id="ownerPub-ide-cardName" placeholder="">
+									    <label for="finderPub-ide-cardName">姓名:</label>
+									    <input type="text" class="form-control" id="finderPub-ide-cardName" placeholder="">
 									  </div>
+									  
+									  <div class="form-group forum-text">
+													    
+										<textarea class="form-control" placeholder="输入详细描述信息" rows="6"></textarea>
+									  </div>
+									  <button type="button"  class="btn btn-default add">上传图片</button>
+									  <div class="file-box" style="display:inline-block">
+					 
+									  <input type='text' name='textfield' id='textfield-finderPubcards3' class='txt' style="width: 160px;height:34px;"/>  
+									  <input type='button' class='btn ' value='浏览...' />
+									  <input type="file" name="fileField" class="brow-file" id="fileField-finderPubcards3" size="28" onchange="document.getElementById('textfield-finderPubcards3').value=this.value" />
+															 
+															
+									  </div>
+									  <button type="submit"  class="btn btn-success pull-right">提交</button>
 								      
 								</form>
-								<form class="form-inline form-trans" id="ownerPub-cards4" role="form" style="display:none;margin-top: 15px;">
+								<form class=" form-trans" id="finderPub-cards4" role="form" style="display:none;margin-top: 15px;">
 								      
 									  <div class="form-group">
-									    <label for="ownerPub-vip-cardName">会员卡:</label>
-									    <input type="text" class="form-control" id="ownerPub-vip-cardName" placeholder="姓名">
+									    <label for="finderPub-vip-cardName">会员卡:</label>
+									    <input type="text" class="form-control" id="finderPub-vip-cardName" placeholder="姓名">
 									  </div>
+									  
+									  <div class="form-group forum-text">
+													    
+										<textarea class="form-control" placeholder="输入详细描述信息" rows="6"></textarea>
+									  </div>
+									  <button type="button"  class="btn btn-default add">上传图片</button>
+									  <div class="file-box" style="display:inline-block">
+					 
+									  <input type='text' name='textfield' id='textfield-finderPubcards4' class='txt' style="width: 160px;height:34px;"/>  
+									  <input type='button' class='btn ' value='浏览...' />
+									  <input type="file" name="fileField" class="brow-file" id="fileField-finderPubcards4" size="28" onchange="document.getElementById('textfield-finderPubcards4').value=this.value" />
+															 
+															
+									  </div>
+									  <button type="submit"  class="btn btn-success pull-right">提交</button>
 								      
 								</form>
-								<form role="form" id="form-des-owner">
-								  <div class="form-group">
-								   <input class="form-control  ns-error" type="text" placeholder="输入标题"></input>
-								  
-								  </div>
-								  <div class="form-group forum-text">
-								    
-								    <textarea class="form-control" placeholder="输入详细描述信息" rows="6"></textarea>
-								  </div>
-								  <button type="button"  class="btn btn-default add">上传图片</button>
-							          <div class="file-box" style="display:inline-block">
- 
-										 <input type='text' name='textfield' id='textfield-cards' class='txt' style="width: 160px;height:34px;"/>  
-										 <input type='button' class='btn ' value='浏览...' />
-										 <input type="file" name="fileField" class="brow-file" id="fileField-cards" size="28" onchange="document.getElementById('textfield-cards').value=this.value" />
-										 
-										
-									  </div>
-							          <button type="submit"  class="btn btn-success pull-right">提交</button>
-								</form>
+								
 					   </div>
 					   
 					   
 					   <!-- 电子产品类 -->
-                  <div class="tab-pane fade" id="ownerPub-elec">
+                  <div class="tab-pane fade" id="finderPub-elec">
 					        
 							
 							<form action="">
-							   
+							          <div class="form-group">  
+											 <label for="select-finderelec">电子产品类别:</label>
+											 <select class="form-control" id="select-finderelec">
+											 <option value="">请选择</option>
+											 <option value=""></option>
+											 <option value=""></option>
+														         
+											 </select>
+									  </div>
 							          <div class="form-group">
-										     <label for="elecownerPub-name">姓名:</label>
-										     <input type="text" class="form-control" id="elecownerPubb-name" placeholder="请输入姓名">
+										     <label for="elecfinderPub-name">姓名:</label>
+										     <input type="text" class="form-control" id="elecfinderPub-name" placeholder="请输入姓名">
 									  </div>
+									  
 									  <div class="form-group">
-									    <label for="elecownerPub-brande">物品品牌:</label>
-									    <input type="text" class="form-control" id="elecownerPub-brand" placeholder="">
-									    
-									  </div>
+														        <label for="elecfinderPub-place">拾到时间:</label>
+												                <div class='input-group date' >
+												                    <input data-date-format="yyyy-mm-dd" type='text' class="form-control" id="elefinderPub-time" />
+												                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+												                    </span>
+												                </div>
+														  
+														  
+														  </div>
+									  
 									  <div class="form-group">
-									    <label for="elecownerPub-time">丢失时间:</label>
-									    <input type="text" class="form-control" id="elecownerPub-time" placeholder="">
-									    
+														    <label for="elecfinderPub-place">拾到地点:</label>
+														    <input type="text" class="form-control" id="elecfinderPub-place" placeholder="">
+														    
 									  </div>
+									  
+									  <div class="form-group">
+														    <label for="elecfinderPub-phone">电话:</label>
+														    <input type="text" class="form-control" id="elecfinderPub-phone" placeholder="">
+														    
+									  </div> 
+									  
 									  <div class="form-group forum-text">
 							    
 									    <textarea class="form-control" placeholder="输入详细描述信息" rows="6"></textarea>
@@ -253,20 +315,46 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				  </div>
 				  
 				  <!-- 日常用品类 -->
-				  <div class="tab-pane fade" id="ownerPub-day">
+				  <div class="tab-pane fade" id="finderPub-day">
 					        
 							
 							<form action="">
-							   
+							          <div class="form-group">  
+											 <label for="select-finderday">日用产品类别:</label>
+											 <select class="form-control" id="select-finderday">
+											 <option value="">请选择</option>
+											 <option value=""></option>
+											 <option value=""></option>
+														         
+											 </select>
+									  </div>
 							          <div class="form-group">
-										     <label for="dayownerPub-name">姓名:</label>
-										     <input type="text" class="form-control" id="dayownerPub-name" placeholder="请输入姓名">
+										     <label for="dayfinderPub-name">姓名:</label>
+										     <input type="text" class="form-control" id="dayfinderPub-name" placeholder="请输入姓名">
 									  </div>
 									  <div class="form-group">
-									    <label for="dayownerPub-time">丢失时间:</label>
-									    <input type="text" class="form-control" id="dayownerPub-time" placeholder="">
-									    
+											 <label for="dayfinderPub-place">拾到时间:</label>
+											 <div class='input-group date' >
+											 <input data-date-format="yyyy-mm-dd" type='text' class="form-control" id="dayfinderPub-time" />
+											 <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+											 </span>
+											 </div>
+														  
+														  
 									  </div>
+									  
+									  <div class="form-group">
+														    <label for="dayfinderPub-place">丢失地点:</label>
+														    <input type="text" class="form-control" id="dayfinderPub-place" placeholder="">
+														    
+									  </div>
+									  
+									  <div class="form-group">
+														    <label for="dayfinderPub-phone">电话:</label>
+														    <input type="text" class="form-control" id="dayfinderPub-phone" placeholder="">
+														    
+									  </div> 
+									  
 									  <div class="form-group forum-text">
 							    
 									    <textarea class="form-control" placeholder="输入详细描述信息" rows="6"></textarea>
@@ -291,20 +379,45 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				  </div>
 				  
 				  <!-- 包类 -->
-				  <div class="tab-pane fade" id="ownerPub-pack">
+				  <div class="tab-pane fade" id="finderPub-pack">
 					        
 							
 							<form action="">
-							   
+							          <div class="form-group">  
+											 <label for="pack-finderday">日用产品类别:</label>
+											 <select class="form-control" id="pack-finderday">
+											 <option value="">请选择</option>
+											 <option value=""></option>
+											 <option value=""></option>
+														         
+											 </select>
+									  </div>
 							          <div class="form-group">
-										     <label for="packownerPub-name">姓名:</label>
-										     <input type="text" class="form-control" id="packownerPub-name" placeholder="请输入姓名">
+										     <label for="packfinderPub-name">姓名:</label>
+										     <input type="text" class="form-control" id="packfinderPub-name" placeholder="请输入姓名">
 									  </div>
 									  <div class="form-group">
-									    <label for="packownerPub-time">丢失时间:</label>
-									    <input type="text" class="form-control" id="packownerPub-time" placeholder="">
-									    
+											 <label for="packfinderPub-place">拾到时间:</label>
+											 <div class='input-group date' >
+											 <input data-date-format="yyyy-mm-dd" type='text' class="form-control" id="packfinderPub-time" />
+											 <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+											 </span>
+											 </div>
+														  
+														  
 									  </div>
+									  
+									   <div class="form-group">
+											 <label for="packfinderPub-place">丢失地点:</label>
+											 <input type="text" class="form-control" id="packfinderPub-place" placeholder="">
+														    
+									  </div>
+									  
+									  <div class="form-group">
+											 <label for="packfinderPub-phone">电话:</label>
+											 <input type="text" class="form-control" id="packfinderPub-phone" placeholder="">
+														    
+									  </div> 
 									  <div class="form-group forum-text">
 							    
 									    <textarea class="form-control" placeholder="输入详细描述信息" rows="6"></textarea>
@@ -329,19 +442,44 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				  </div>
 				  
 				  <!-- 配饰类 -->
-				  <div class="tab-pane fade" id="ownerPub-orna">
+				  <div class="tab-pane fade" id="finderPub-orna">
 					        
 							
 							<form action="">
-							   
+							          <div class="form-group">  
+											 <label for="orna-finderday">日用产品类别:</label>
+											 <select class="form-control" id="orna-finderday">
+											 <option value="">请选择</option>
+											 <option value=""></option>
+											 <option value=""></option>
+														         
+											 </select>
+									  </div>
 							          <div class="form-group">
-										     <label for="ornaownerPub-name">姓名:</label>
-										     <input type="text" class="form-control" id="ornaownerPub-name" placeholder="请输入姓名">
+										     <label for="ornafinderPub-name">姓名:</label>
+										     <input type="text" class="form-control" id="ornafinderPub-name" placeholder="请输入姓名">
 									  </div>
 									  <div class="form-group">
-									    <label for="ornaownerPub-time">丢失时间:</label>
-									    <input type="text" class="form-control" id="ornaownerPub-time" placeholder="">
-									    
+											 <label for="ornafinderPub-place">拾到时间:</label>
+											 <div class='input-group date' >
+											 <input data-date-format="yyyy-mm-dd" type='text' class="form-control" id="ornafinderPub-time" />
+											 <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+											 </span>
+											 </div>
+														  
+														  
+									  </div>
+									  
+									  <div class="form-group">
+											 <label for="ornafinderPub-place">丢失地点:</label>
+											 <input type="text" class="form-control" id="ornafinderPub-place" placeholder="">
+														    
+									  </div>
+									  
+									  <div class="form-group">
+											 <label for="ornafinderPub-phone">电话:</label>
+											 <input type="text" class="form-control" id="ornafinderPub-phone" placeholder="">
+														    
 									  </div>
 									  <div class="form-group forum-text">
 							    
@@ -367,24 +505,42 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				  </div>
 				  
 				  <!-- 其它 -->
-				  <div class="tab-pane fade" id="ownerPub-other">
+				  <div class="tab-pane fade" id="finderPub-other">
 					        
 							
 							<form action="">
-							   
+							          
 							          <div class="form-group">
-										     <label for="otherownerPub-name">姓名:</label>
-										     <input type="text" class="form-control" id="otherownerPub-name" placeholder="请输入姓名">
+										     <label for="otherfinderPub-name">姓名:</label>
+										     <input type="text" class="form-control" id="otherfinderPub-name" placeholder="请输入姓名">
 									  </div>
 									  <div class="form-group">
-										     <label for="otherownerPub-product">丢失的物品名称:</label>
-										     <input type="text" class="form-control" id="otherownerPub-product" placeholder="">
+										     <label for="otherfinderPub-product">拾到的物品名称:</label>
+										     <input type="text" class="form-control" id="otherfinderPub-product" placeholder="">
 									  </div>
 									  <div class="form-group">
-									    <label for="otherownerPubtime">丢失时间:</label>
-									    <input type="text" class="form-control" id="otherownerPub-time" placeholder="">
-									    
+											 <label for="ornafinderPub-place">拾到时间:</label>
+											 <div class='input-group date' >
+											 <input data-date-format="yyyy-mm-dd" type='text' class="form-control" id="ornafinderPub-time" />
+											 <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+											 </span>
+											 </div>
+														  
+														  
 									  </div>
+									  
+									  <div class="form-group">
+											 <label for="otherfinderPub-place">丢失地点:</label>
+											 <input type="text" class="form-control" id="otherfinderPub-place" placeholder="">
+														    
+									  </div>
+									  
+									  <div class="form-group">
+											 <label for="otherfinderPub-phone">电话:</label>
+											 <input type="text" class="form-control" id="otherfinderPub-phone" placeholder="">
+														    
+									  </div>
+									  
 									  <div class="form-group forum-text">
 							    
 									    <textarea class="form-control" placeholder="输入详细描述信息" rows="6"></textarea>
@@ -437,16 +593,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap-datetimepicker.min.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="../js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
     <script type="text/javascript">
         
-		    $('#ownerPubCards').on('change', function(){
+		    $('#finderPubCards').on('change', function(){
 		    	  var val = $(this).val();
 		    	  switch(val){
-		    	  case '-1': $('#ownerPub-cards1,#ownerPub-cards2, #ownerPub-cards3,#ownerPub-cards4').hide();  break;
-		    	  case '0': $('#ownerPub-cards1').show(); $('#ownerPub-cards2, #ownerPub-cards3,#ownerPub-cards4').hide(); break;
-		    	  case '1': $('#ownerPub-cards2').show(); $('#ownerPub-cards1, #ownerPub-cards3,#ownerPub-cards4').hide(); break;
-		    	  case '2': $('#ownerPub-cards3').show(); $('#ownerPub-cards2, #ownerPub-cards1,#ownerPub-cards4').hide(); break;
-		    	  case '3': $('#ownerPub-cards4').show(); $('#ownerPub-cards2, #ownerPub-cards3,#ownerPub-cards1').hide(); break;
+		    	  case '-1': $('#finderPub-cards1,#finderPub-cards2, #finderPub-cards3,#finderPub-cards4').hide();  break;
+		    	  case '0': $('#finderPub-cards1').show(); $('#finderPub-cards2, #finderPub-cards3,#finderPub-cards4').hide(); break;
+		    	  case '1': $('#finderPub-cards2').show(); $('#finderPub-cards1, #finderPub-cards3,#finderPub-cards4').hide(); break;
+		    	  case '2': $('#finderPub-cards3').show(); $('#finderPub-cards2, #finderPub-cards1,#finderPub-cards4').hide(); break;
+		    	  case '3': $('#finderPub-cards4').show(); $('#finderPub-cards2, #finderPub-cards3,#finderPub-cards1').hide(); break;
 		    	  }
 		    	});
               
@@ -456,7 +614,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		    		$(".file-box").show();
 		    	})
 		    	
-		    })
+		    });
+		    
+		    
+		    $(function() {
+		        $('.date').datetimepicker({
+		        	format: 'yyyy-mm-dd',  
+			        language: 'zh-CN',
+			        minView: "month",
+			        autoclose:true,
+			        pickerPosition: "bottom-left"
+		        });
+		      });
     
     
     </script>
