@@ -36,68 +36,31 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   <body>
         <header id="header">
-
-      	
-		<nav class="navbar navbar-inverse navbar-fixed-top">
-			<div class="container">
-				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed"
-						data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-						aria-expanded="false">
-						<span class="sr-only">Toggle navigation</span> <span
-							class="icon-bar"></span> <span class="icon-bar"></span> <span
-							class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="#">寻它网</a>
-				</div>
-
-				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse"
-					id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav">
-						<li class="active"><a href="index.jsp">首页 <span
-								class="sr-only">(current)</span>
-						</a>
-						</li>
-
-						<li><a href="#">关于</a>
-						</li>
-
-						<li class="dropdown"><a href="#" class="dropdown-toggle"
-							data-toggle="dropdown">失物招领 <span class="caret"></span></a>
-						
-							<ul class="dropdown-menu" role="menu">
-
-								<li><a href="#">action</a>
-								</li>
-
-								<li role="separator" class="divider"></li>
-								<li><a href="#">Separated</a>
-								</li>
-								
-							</ul>
-						<li><a href="funcmain.jsp">社区</a></li>
-						
-						</li>
-
-					</ul>
-					<ul id="header-me" class="nav navbar-nav navbar-right ng-scope"
-						ng-controller="user_ctrl">
-						<li class="divider-vertical hidden-xs"></li>
-						<li><a  href="#">用户</a>
-						</li>
-
-
-					</ul>
-
-				</div>
-				<!-- /.navbar-collapse -->
-			</div>
-			<!-- /.container-fluid -->
-		</nav>
+            <nav id="header_outer" class="navbar navbar-inverse navbar-fixed-top navbar-default">
+                <div class="navbar-header">
+                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				         
+				         <span class="icon-bar"></span>
+				         <span class="icon-bar"></span>
+				         <span class="icon-bar"></span>
+				      </button>
+                    <a id="header_logo" class="navbar-brand">寻它网</a>
+                </div>
+			     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="background-color: rgb(57, 57, 57); margin-top: 0px; height: 1px;">
+			        <ul id="header_menu" class="nav navbar-nav">
+			            <li><a href="index.jsp">首页</a></li>
+			            <li><a href="">关于</a></li>
+			            <li class="active"><a href="funcmain.jsp">失物招领</a></li>
+			        </ul>
+			        <ul id="header_me" class="nav navbar-nav navbar-right">
+			            <li class="divider-vertical hidden-xs"></li>
+			            <li><a class="mr_15" href="">用户</a></li>
+			            <li><a href="">退出</a></li>
+			        </ul>
+			    </div>
+		    </nav>
 	
-    </header> 
+        </header> 
     <div id="wrap-all">
       <div id="main" class="inner">
         <div class="page_navbar">
